@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>俳句 · Haiku Daily</title>
+  <meta name="description" content="A philosophical haiku from the classical Japanese masters each day — Bashō, Issa, Buson and others. Reroll for another, copy it, and let the koto play." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;700&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- decorative layers -->
+  <div class="grain" aria-hidden="true"></div>
+  <div class="sun" aria-hidden="true"></div>
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <!-- vertical brand strip -->
+  <div class="vbrand" aria-hidden="true">日々の俳句</div>
+
+  <main class="scroll" id="scroll">
+    <header class="masthead">
+      <span class="brand-jp">俳句</span>
+      <span class="brand-en">Haiku Daily</span>
+    </header>
+
+    <p class="date" id="dateLabel"></p>
+
+    <section class="haiku-block">
+      <span class="theme-kanji" id="themeKanji" aria-hidden="true">静</span>
+      <blockquote class="haiku" id="haiku" aria-live="polite">
+        <span class="line">The old pond—</span>
+        <span class="line">a frog leaps in:</span>
+        <span class="line">the sound of water</span>
+      </blockquote>
+      <p class="jp" id="jp" lang="ja">古池や蛙飛び込む水の音</p>
+      <p class="byline" id="byline">— Matsuo Bashō · 1644–1694</p>
+      <p class="theme-label" id="themeLabel">stillness · the eternal now</p>
+    </section>
+
+    <div class="seal" id="seal" title="Haiku Daily"><span>俳</span></div>
+
+    <div class="controls">
+      <button id="rerollBtn" class="btn btn-primary" type="button">
+        <span class="ico" aria-hidden="true">⟳</span><span class="lbl">Reroll</span>
+      </button>
+      <button id="copyBtn" class="btn btn-ghost" type="button">
+        <span class="ico" aria-hidden="true">⧉</span><span class="lbl">Copy</span>
+      </button>
+      <button id="soundBtn" class="btn btn-ghost" type="button" aria-pressed="false">
+        <span class="ico" aria-hidden="true">♪</span><span class="lbl">Koto off</span>
+      </button>
+    </div>
+
+    <footer class="foot">
+      <span id="poolCount"></span>
+      <span class="hint">press <kbd>R</kbd> to reroll · <kbd>C</kbd> to copy</span>
+    </footer>
+
+    <div class="seigaiha" aria-hidden="true"></div>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="haikus.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

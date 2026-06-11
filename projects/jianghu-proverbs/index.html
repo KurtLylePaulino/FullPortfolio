@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>江湖箴言 · Wisdom of the Rivers and Lakes</title>
+  <meta name="description" content="Roll a random Chinese proverb from 150 classics — each with its original author and source. A wuxia / murim styled scroll." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700;900&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- decorative drifting ink mist -->
+  <div class="mist mist-a" aria-hidden="true"></div>
+  <div class="mist mist-b" aria-hidden="true"></div>
+
+  <!-- vertical seal banners on the sides -->
+  <div class="banner banner-left" aria-hidden="true">江湖路远</div>
+  <div class="banner banner-right" aria-hidden="true">侠义长存</div>
+
+  <main class="stage">
+    <header class="masthead">
+      <div class="seal" aria-hidden="true">箴<br>言</div>
+      <h1 class="title">江湖箴言</h1>
+      <p class="subtitle">Wisdom of the Rivers &amp; Lakes</p>
+      <p class="tagline">一百五十则古训 · 抽取一卷 · Draw a scroll from 150 sages</p>
+    </header>
+
+    <!-- the hanging scroll -->
+    <section class="scroll" id="scroll" aria-live="polite">
+      <div class="scroll-rod top" aria-hidden="true"></div>
+      <div class="scroll-body">
+        <div class="scroll-inner">
+          <div class="corner tl" aria-hidden="true"></div>
+          <div class="corner tr" aria-hidden="true"></div>
+          <div class="corner bl" aria-hidden="true"></div>
+          <div class="corner br" aria-hidden="true"></div>
+
+          <blockquote class="proverb">
+            <p class="zh" id="zh">点击下方「抽签」<br>以启江湖之智</p>
+            <p class="py" id="py">Press “Draw Lots” to summon a proverb</p>
+            <p class="en" id="en"></p>
+          </blockquote>
+
+          <figcaption class="attribution" id="attribution">
+            <span class="author" id="author"></span>
+            <span class="dynasty" id="dynasty"></span>
+          </figcaption>
+
+          <div class="index-stamp" id="indexStamp" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="scroll-rod bottom" aria-hidden="true"></div>
+    </section>
+
+    <nav class="controls">
+      <button class="btn btn-roll" id="rollBtn" type="button">
+        <span class="btn-glyph">抽</span>
+        <span class="btn-label">抽签 · Draw Lots</span>
+      </button>
+      <button class="btn btn-copy" id="copyBtn" type="button" disabled>
+        <span class="btn-glyph">抄</span>
+        <span class="btn-label" id="copyLabel">抄录 · Copy</span>
+      </button>
+    </nav>
+
+    <footer class="foot">
+      <span id="counter">— 江湖共一百五十卷 · 150 scrolls —</span>
+    </footer>
+  </main>
+
+  <script src="js/proverbs.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+/* =========================================================
+   江湖箴言 · Wuxia / Murim styled proverb scroll
+   Palette: aged rice paper, cinnabar seal red, ink black, gold
+   ========================================================= */
+
+:root {
+  --ink:        #1b1410;
+  --ink-soft:   #3a2e24;
+  --paper:      #e9dcc0;
+  --paper-warm: #ddcaa3;
+  --paper-edge: #c9b486;
+  --cinnabar:   #a0271c;
+  --cinnabar-2: #c5372a;
+  --gold:       #b08b3e;
+  --gold-soft:  #d9bd7a;
+  --jade:       #4f7a5b;
+  --bg-0:       #120d0a;
+  --bg-1:       #2a1a13;
+  --bg-2:       #1a110c;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  color: var(--paper);
+  background:
+    radial-gradient(ellipse at 50% -10%, #3c241755 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 120%, #0000 0%, transparent 50%),
+    repeating-linear-gradient(0deg, #00000022 0 2px, transparent 2px 4px),
+    linear-gradient(160deg, var(--bg-1) 0%, var(--bg-2) 45%, var(--bg-0) 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* faint mountain-range silhouette at the bottom */
+body::after {
+  content: "";
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 38vh;
+  background:
+    radial-gradient(120% 100% at 20% 100%, #0a060488 0 40%, transparent 70%),
+    radial-gradient(140% 100% at 75% 100%, #0a060466 0 45%, transparent 72%);
+  -webkit-mask: linear-gradient(transparent, #000 80%);
+          mask: linear-gradient(transparent, #000 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- drifting ink mist ---- */
+.mist {
+  position: fixed;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle, #d8c79a14 0%, transparent 60%);
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 0;
+}
+.mist-a { top: -25vmax; left: -20vmax; animation: drift 38s ease-in-out infinite; }
+.mist-b { bottom: -30vmax; right: -25vmax; animation: drift 46s ease-in-out infinite reverse; }
+@keyframes drift {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50%     { transform: translate(6vmax, 4vmax) scale(1.12); }
+}
+
+/* ---- vertical calligraphy banners ---- */
+.banner {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: clamp(1.4rem, 3.4vw, 2.8rem);
+  letter-spacing: 0.35em;
+  color: #caa85e1f;
+  text-shadow: 0 0 18px #00000060;
+  user-select: none;
+  z-index: 0;
+}
+.banner-left  { left: clamp(4px, 2vw, 28px); }
+.banner-right { right: clamp(4px, 2vw, 28px); }
+
+/* ---- main stage ---- */
+.stage {
+  position: relative;
+  z-index: 2;
+  width: min(680px, 92vw);
+  margin: 0 auto;
+  padding: clamp(1.4rem, 4vw, 3rem) 0 2.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ---- masthead ---- */
+.masthead { text-align: center; margin-bottom: 1.6rem; }
+
+.seal {
+  display: inline-grid;
+  place-items: center;
+  width: 64px; height: 64px;
+  line-height: 1.05;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 1.5rem;
+  color: var(--paper-warm);
+  background:
+    linear-gradient(145deg, var(--cinnabar-2), var(--cinnabar));
+  border: 2px solid #e9c98a66;
+  border-radius: 10px;
+  box-shadow: 0 6px 22px #00000070, inset 0 0 0 1px #00000033;
+  transform: rotate(-3deg);
+  margin-bottom: 0.7rem;
+}
+
+.title {
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: clamp(2.6rem, 9vw, 4.4rem);
+  margin: 0.2rem 0 0;
+  color: var(--gold-soft);
+  letter-spacing: 0.12em;
+  text-shadow:
+    0 1px 0 #000,
+    0 0 24px #b0883e55,
+    0 0 2px #fff2;
+}
+
+.subtitle {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  font-size: clamp(0.62rem, 2vw, 0.8rem);
+  color: var(--gold);
+  margin: 0.5rem 0 0;
+  padding-left: 0.42em;
+}
+
+.tagline {
+  margin: 0.85rem 0 0;
+  font-size: clamp(0.72rem, 2.3vw, 0.9rem);
+  color: #d8c79a99;
+  letter-spacing: 0.04em;
+}
+
+/* ---- the hanging scroll ---- */
+.scroll {
+  width: 100%;
+  max-width: 560px;
+  filter: drop-shadow(0 24px 40px #000000aa);
+  animation: hang-in 0.9s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes hang-in {
+  from { opacity: 0; transform: translateY(-26px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.scroll-rod {
+  height: 22px;
+  margin: 0 -14px;
+  border-radius: 11px;
+  background:
+    linear-gradient(180deg, #6f4a23 0%, #3a2410 50%, #5b3a1c 100%),
+    linear-gradient(90deg, #7a5226, #4a2f14);
+  background-blend-mode: overlay;
+  box-shadow: inset 0 2px 3px #ffdca233, inset 0 -3px 6px #00000088, 0 2px 6px #000a;
+  position: relative;
+}
+.scroll-rod::before,
+.scroll-rod::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 16px; height: 30px;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  background: linear-gradient(180deg, #c79a4e, #6f4a20);
+  box-shadow: inset 0 0 0 1px #00000055, 0 1px 3px #000a;
+}
+.scroll-rod::before { left: -22px; }
+.scroll-rod::after  { right: -22px; }
+.scroll-rod.top    { margin-bottom: -2px; }
+.scroll-rod.bottom { margin-top: -2px; }
+
+.scroll-body {
+  background:
+    radial-gradient(circle at 18% 12%, #ffffff14 0, transparent 30%),
+    radial-gradient(circle at 82% 88%, #00000018 0, transparent 35%),
+    repeating-linear-gradient(92deg, #00000007 0 3px, transparent 3px 7px),
+    linear-gradient(170deg, var(--paper) 0%, var(--paper-warm) 55%, var(--paper-edge) 100%);
+  border-left: 3px solid #b89a5e44;
+  border-right: 3px solid #00000022;
+  padding: 6px;
+  position: relative;
+}
+/* aged speckle / foxing */
+.scroll-body::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 30% 40%, #7a5a2a14 0 2px, transparent 3px),
+    radial-gradient(circle at 70% 65%, #7a5a2a12 0 2px, transparent 3px),
+    radial-gradient(circle at 50% 20%, #7a5a2a10 0 1px, transparent 2px),
+    radial-gradient(circle at 22% 80%, #7a5a2a12 0 2px, transparent 3px);
+  background-size: 120px 120px, 160px 160px, 90px 90px, 140px 140px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.scroll-inner {
+  position: relative;
+  border: 1px solid #8a6a30aa;
+  outline: 1px solid #ffffff33;
+  outline-offset: -5px;
+  padding: clamp(1.8rem, 6vw, 3rem) clamp(1.4rem, 5vw, 2.6rem);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ornamental corners */
+.corner {
+  position: absolute;
+  width: 26px; height: 26px;
+  border: 2px solid var(--cinnabar);
+  opacity: 0.55;
+}
+.corner.tl { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+.corner.tr { top: 10px; right: 10px; border-left: 0; border-bottom: 0; }
+.corner.bl { bottom: 10px; left: 10px; border-right: 0; border-top: 0; }
+.corner.br { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+/* ---- proverb text ---- */
+.proverb { margin: 0; color: var(--ink); }
+
+.zh {
+  font-family: "Ma Shan Zheng", "Noto Serif SC", serif;
+  font-weight: 700;
+  font-size: clamp(1.55rem, 6.2vw, 2.5rem);
+  line-height: 1.5;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  text-shadow: 0 1px 0 #fff6;
+}
+
+.py {
+  font-style: italic;
+  font-size: clamp(0.78rem, 2.6vw, 0.98rem);
+  color: var(--ink-soft);
+  opacity: 0.82;
+  margin: 0 0 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.en {
+  font-family: "Cinzel", "Noto Serif SC", serif;
+  font-size: clamp(0.9rem, 3.2vw, 1.12rem);
+  line-height: 1.55;
+  color: #2c2118;
+  margin: 0;
+  position: relative;
+  padding-top: 0.9rem;
+}
+.en:not(:empty)::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  width: 56px; height: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, var(--cinnabar), transparent);
+}
+
+/* ---- attribution ---- */
+.attribution {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-height: 2.4em;
+}
+.author {
+  font-family: "Noto Serif SC", serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 3.6vw, 1.25rem);
+  color: var(--cinnabar);
+  letter-spacing: 0.04em;
+}
+.author:not(:empty)::before { content: "— "; opacity: 0.7; }
+.dynasty {
+  font-size: clamp(0.7rem, 2.4vw, 0.85rem);
+  color: var(--ink-soft);
+  opacity: 0.8;
+}
+
+/* red index seal, lower-right */
+.index-stamp {
+  position: absolute;
+  right: clamp(14px, 5vw, 30px);
+  bottom: clamp(14px, 5vw, 26px);
+  width: 48px; height: 48px;
+  display: grid;
+  place-items: center;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 0.78rem;
+  line-height: 1.05;
+  color: var(--cinnabar);
+  border: 2.5px solid var(--cinnabar);
+  border-radius: 8px;
+  transform: rotate(-7deg);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: center;
+  background:
+    repeating-linear-gradient(45deg, #a0271c14 0 4px, transparent 4px 8px);
+}
+.index-stamp.show { opacity: 0.78; }
+
+/* ---- controls ---- */
+.controls {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 1.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  --bg1: var(--cinnabar-2);
+  --bg2: var(--cinnabar);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: "Noto Serif SC", serif;
+  font-weight: 600;
+  font-size: clamp(0.92rem, 3vw, 1.05rem);
+  color: #f6e9cc;
+  padding: 0.78rem 1.5rem;
+  border: 1px solid #f0d49a55;
+  border-radius: 4px;
+  background: linear-gradient(160deg, var(--bg1), var(--bg2));
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 18px #00000066, inset 0 1px 0 #ffffff33, inset 0 -2px 6px #00000055;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  position: relative;
+}
+.btn:hover { transform: translateY(-2px); filter: brightness(1.08); box-shadow: 0 10px 26px #00000077, inset 0 1px 0 #ffffff44; }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; }
+
+.btn-glyph {
+  display: grid;
+  place-items: center;
+  width: 1.7em; height: 1.7em;
+  font-family: "Ma Shan Zheng", cursive;
+  font-size: 1.05em;
+  background: #00000033;
+  border: 1px solid #f0d49a44;
+  border-radius: 4px;
+}
+
+.btn-copy { --bg1: #2f4a37; --bg2: #1f3325; color: #dfead9; }
+.btn-copy:disabled { opacity: 0.4; cursor: not-allowed; transform: none; filter: none; }
+.btn-copy.copied { --bg1: var(--gold); --bg2: #8a6a2c; color: #2a1d08; }
+
+/* roll animation on the scroll */
+.scroll.rolling .scroll-inner { animation: shake 0.5s ease; }
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-5px) rotate(-0.3deg); }
+  40% { transform: translateX(5px) rotate(0.3deg); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+.proverb.swap { animation: fade-swap 0.45s ease; }
+@keyframes fade-swap {
+  0% { opacity: 0; transform: translateY(10px); filter: blur(3px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* ---- footer ---- */
+.foot {
+  margin-top: 1.8rem;
+  font-size: clamp(0.7rem, 2.3vw, 0.82rem);
+  color: #caa85e88;
+  letter-spacing: 0.14em;
+  text-align: center;
+}
+
+@media (max-width: 420px) {
+  .banner { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mist, .scroll, .proverb.swap, .scroll.rolling .scroll-inner { animation: none !important; }
+}
