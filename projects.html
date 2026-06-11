@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Kurt Lyle Paulino</title>
+<meta name="description" content="Technical work by Kurt Lyle Paulino — Circuit Breakers (award-winning Unity game), a melanoma-detection CNN, and shipped web apps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body data-theme="projects">
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">← Kurt&nbsp;Lyle&nbsp;<b>Paulino</b></a>
+  <nav class="nav__links">
+    <a href="art.html">Art</a>
+    <a href="music.html">Music</a>
+    <a href="projects.html">Projects</a>
+    <a href="writing.html">Writing</a>
+    <a class="cta" href="index.html">Hub</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="term">$ <b>./paulino</b> --show projects --sort impact</div>
+    <span class="eyebrow">03 — Technical</span>
+    <h1>Projects<span class="cursor">_</span></h1>
+    <p class="lede" style="margin-top:1rem">Games, machine learning, and the web. Built, shipped, and
+      — in one case — awarded. Heavy artifacts (builds, models, video) live off-site; everything here
+      is real and linkable.</p>
+  </div>
+</section>
+
+<main class="wrap" style="padding-bottom:2rem">
+
+  <!-- Circuit Breakers -->
+  <article class="proj reveal">
+    <div class="proj__media"><img src="assets/img/projects/circuit-breakers.webp" alt="Circuit Breakers main menu" loading="lazy"></div>
+    <div class="proj__body">
+      <div class="badge">★ Best Thesis · Best Paper · Best Presenter</div>
+      <div class="proj__tags"><span class="tag">Unity</span><span class="tag">C#</span><span class="tag">Firebase</span><span class="tag">Roguelike</span></div>
+      <h3>Circuit Breakers</h3>
+      <div class="proj__meta">2D PC roguelike about cybersecurity · Thesis · 2024–present</div>
+      <p>A 2D roguelike that teaches cybersecurity through play. I served as <b>lead author</b> on the
+        award-winning paper and technical documentation, ran the <b>numerical balancing</b> across
+        gameplay and database systems, and built functionality from UI to core mechanics. Backed by
+        Firebase for auth, stats, and achievements.</p>
+      <div class="proj__links">
+        <a class="solid" href="assets/docs/IMRAD_FinalManuscript_CircuitBreakers.pdf" target="_blank" rel="noopener">Read the thesis ↗</a>
+        <a href="https://github.com/KurtLylePaulino" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="muted" title="Windows build · ~282 MB — hosted externally">Windows build · external</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Melanoma CNN -->
+  <article class="proj rev reveal">
+    <div class="proj__media code"><div class="proj__glyph">⌗ CNN</div></div>
+    <div class="proj__body">
+      <div class="proj__tags"><span class="tag">Python</span><span class="tag">TensorFlow / Keras</span><span class="tag">CNN</span><span class="tag win">90%+ accuracy</span></div>
+      <h3>Melanoma Skin Cancer Detection</h3>
+      <div class="proj__meta">Convolutional neural network · Capstone · 2025</div>
+      <p>A CNN that classifies dermoscopic images as <b>benign or malignant</b> at over <b>90% accuracy</b>.
+        I engineered and ran several experimental iterations — comparing optimizers and activation
+        functions — to find the most stable convergence patterns, documented in the notebook.</p>
+      <div class="proj__links">
+        <a class="solid" href="assets/docs/melanoma_model.ipynb" download>Download notebook ↓</a>
+        <a href="https://github.com/KurtLylePaulino" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="muted" title="Trained model ~255 MB · video presentation ~647 MB — hosted externally">Model + demo · external</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Web apps -->
+  <article class="proj reveal">
+    <div class="proj__media"><img src="assets/img/projects/haiku-daily.webp" alt="Haiku Daily" loading="lazy"></div>
+    <div class="proj__body">
+      <div class="proj__tags"><span class="tag">HTML / CSS</span><span class="tag">Vanilla JS</span><span class="tag">Web Audio</span><span class="tag">GitHub Pages</span></div>
+      <h3>Haiku Daily</h3>
+      <div class="proj__meta">Static site · one classical haiku per day</div>
+      <p>A washi-paper site that surfaces one public-domain haiku per day from the great masters —
+        Bashō, Issa, Buson — with drifting sakura petals, a copy button, and an optional generative
+        <b>koto soundscape</b> built on the Web Audio API. No build step, no dependencies.</p>
+      <div class="proj__links">
+        <a class="solid" href="projects/haiku-daily/index.html" target="_blank" rel="noopener">Live demo ↗</a>
+        <a href="https://github.com/KurtLylePaulino" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="proj rev reveal">
+    <div class="proj__media"><img src="assets/img/projects/jianghu-proverbs.webp" alt="Jianghu Proverbs" loading="lazy"></div>
+    <div class="proj__body">
+      <div class="proj__tags"><span class="tag">HTML / CSS</span><span class="tag">Vanilla JS</span><span class="tag">i18n</span><span class="tag">GitHub Pages</span></div>
+      <h3>江湖箴言 · Jianghu Proverbs</h3>
+      <div class="proj__meta">Static site · 150 attributed Chinese proverbs</div>
+      <p>A wuxia/murim-styled silk scroll that rolls a random Chinese proverb from 150 classics —
+        each with original text, pinyin, English rendering, and full attribution across 52 sources.
+        Cinnabar seals, gold calligraphy, drifting ink mist, keyboard controls.</p>
+      <div class="proj__links">
+        <a class="solid" href="projects/jianghu-proverbs/index.html" target="_blank" rel="noopener">Live demo ↗</a>
+        <a href="https://github.com/KurtLylePaulino" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Library system (text only) -->
+  <article class="mini reveal">
+    <div class="proj__tags"><span class="tag">Web</span><span class="tag">CRUD</span><span class="tag">Multi-role</span></div>
+    <h3>Web Development — Library System</h3>
+    <div class="proj__meta" style="font-family:var(--mono);font-size:.72rem;color:var(--ink-faint);margin:.2rem 0 .6rem">2024</div>
+    <p>A library platform tracking books, users, and activity across <b>Admin, Librarian, and Borrower</b>
+      roles. I built the CRUD systems, user-activity logging, and transaction records, and managed the
+      interactions and feedback flows between all three user types.</p>
+  </article>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__row">
+    <a href="index.html">← Back to the hub</a>
+    <div style="display:flex;gap:1.4rem;flex-wrap:wrap">
+      <a href="art.html">Art →</a><a href="music.html">Music →</a><a href="writing.html">Writing →</a>
+    </div>
+    <small>© <span id="yr"></span> Kurt Lyle Paulino</small>
+  </div>
+</footer>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

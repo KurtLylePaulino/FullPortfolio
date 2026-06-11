@@ -1,0 +1,74 @@
+/* ============================================================
+   WRITING — Canrael. Dark grimoire: aged ink, gold + cinnabar.
+   ============================================================ */
+:root[data-theme="writing"], body[data-theme="writing"] {
+  --accent:     #d8a657;
+  --accent-2:   #c14b3f;
+  --accent-ink: #16100a;
+  --bg:        #0e0b07;
+  --bg-soft:   #16110a;
+  --bg-panel:  #1c150d;
+  --line:      #3a2e1d;
+  --ink:       #ece3d2;
+  --ink-soft:  #c3b7a0;
+  --ink-faint: #8a7c64;
+  --glow: 0 0 26px rgba(216,166,87,.25);
+  --serif: "Cormorant Garamond", Georgia, serif;
+}
+body[data-theme="writing"] {
+  background:
+    radial-gradient(100% 60% at 50% -5%, rgba(216,166,87,.10), transparent 55%),
+    radial-gradient(80% 50% at 100% 100%, rgba(193,75,63,.06), transparent 60%),
+    var(--bg);
+}
+
+.hero { position: relative; min-height: 92svh; display: flex; flex-direction: column; justify-content: center; padding-top: 6rem; overflow: hidden; text-align: center; }
+#hero-canvas { position: absolute; inset: 0; z-index: 0; }
+.hero::after { content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background: linear-gradient(to bottom, transparent 60%, var(--bg)); }
+.hero__inner { position: relative; z-index: 2; }
+.hero .ornament { color: var(--accent); letter-spacing: .6em; font-size: 1.1rem; margin-bottom: 1rem; opacity: .8; }
+.hero h1 { font-style: italic; font-size: clamp(3rem, 10vw, 6.5rem); margin-bottom: 1.4rem; }
+.hero h1 .sub { display:block; font-style: normal; font-size: .28em; letter-spacing: .5em; text-transform: uppercase; color: var(--ink-faint); margin-top: 1rem; }
+.quote { font-family: var(--serif); font-style: italic; font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  color: var(--ink-soft); max-width: 40ch; margin: 0 auto; line-height: 1.5; }
+.quote::before, .quote::after { content: "“"; color: var(--accent); }
+.quote::after { content: "”"; }
+
+.divider { text-align: center; color: var(--accent); letter-spacing: .5em; margin: 0 auto; opacity: .7; padding: 1rem 0; }
+
+/* intro prose with drop cap */
+.lore { max-width: 70ch; margin: 0 auto; }
+.lore p { color: var(--ink-soft); font-size: 1.08rem; line-height: 1.8; }
+.lore p + p { margin-top: 1.2rem; }
+.lore .dropcap::first-letter { font-family: var(--serif); font-size: 3.6em; float: left; line-height: .72; padding: .05em .12em 0 0; color: var(--accent); font-weight: 600; }
+
+/* lore cards */
+.codex-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; }
+.lore-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.8rem; background: linear-gradient(180deg, var(--bg-soft), transparent); position: relative; overflow: hidden; }
+.lore-card::before { content:""; position:absolute; top:0; left:0; width:100%; height:2px; background: linear-gradient(90deg, var(--accent), transparent); opacity:.6; }
+.lore-card h3 { font-family: var(--serif); font-style: italic; font-size: 1.6rem; color: var(--ink); margin-bottom: .5rem; }
+.lore-card .kicker { font-family: var(--mono); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: .8rem; }
+.lore-card p { color: var(--ink-soft); font-size: .96rem; margin: 0; }
+.lore-card ul { margin: .7rem 0 0; padding-left: 1.1rem; color: var(--ink-soft); font-size: .9rem; }
+.lore-card li { margin: .25rem 0; }
+.lore-card li b { color: var(--accent); font-weight: 600; }
+
+/* continents */
+.realms { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .9rem; }
+.realm { border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.2rem; background: var(--bg-soft); }
+.realm h4 { font-family: var(--serif); font-style: italic; font-size: 1.25rem; margin: 0 0 .25rem; color: var(--ink); }
+.realm span { font-family: var(--mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); display:block; margin-bottom:.4rem; }
+.realm p { color: var(--ink-soft); font-size: .85rem; margin: 0; }
+
+/* codex / library */
+.library { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
+.book { display: flex; gap: 1rem; align-items: flex-start; border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.2rem; background: var(--bg-soft); transition: all .25s var(--ease); }
+.book:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--glow); }
+.book__icon { font-size: 1.4rem; color: var(--accent); line-height: 1; margin-top: .1rem; }
+.book h4 { font-family: var(--serif); font-size: 1.2rem; margin: 0 0 .2rem; color: var(--ink); }
+.book p { font-size: .84rem; color: var(--ink-soft); margin: 0 0 .5rem; }
+.book a { font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.book .meta { font-family: var(--mono); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+
+@media (max-width: 760px) { .codex-grid, .library { grid-template-columns: 1fr; } }

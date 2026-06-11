@@ -1,0 +1,370 @@
+{
+  "artwork": {
+    "title": "Artwork",
+    "items": [
+      {
+        "full": "assets/img/art/artwork/artwork-01.webp",
+        "thumb": "assets/img/art/artwork/artwork-01-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-02.webp",
+        "thumb": "assets/img/art/artwork/artwork-02-thumb.webp",
+        "w": 1792,
+        "h": 2304
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-03.webp",
+        "thumb": "assets/img/art/artwork/artwork-03-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-04.webp",
+        "thumb": "assets/img/art/artwork/artwork-04-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-05.webp",
+        "thumb": "assets/img/art/artwork/artwork-05-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-06.webp",
+        "thumb": "assets/img/art/artwork/artwork-06-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-07.webp",
+        "thumb": "assets/img/art/artwork/artwork-07-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-08.webp",
+        "thumb": "assets/img/art/artwork/artwork-08-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-09.webp",
+        "thumb": "assets/img/art/artwork/artwork-09-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-10.webp",
+        "thumb": "assets/img/art/artwork/artwork-10-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-11.webp",
+        "thumb": "assets/img/art/artwork/artwork-11-thumb.webp",
+        "w": 1792,
+        "h": 2304
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-12.webp",
+        "thumb": "assets/img/art/artwork/artwork-12-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-13.webp",
+        "thumb": "assets/img/art/artwork/artwork-13-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-14.webp",
+        "thumb": "assets/img/art/artwork/artwork-14-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-15.webp",
+        "thumb": "assets/img/art/artwork/artwork-15-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/artwork/artwork-16.webp",
+        "thumb": "assets/img/art/artwork/artwork-16-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      }
+    ]
+  },
+  "vivi": {
+    "title": "Vivi",
+    "items": [
+      {
+        "full": "assets/img/art/vivi/vivi-01.webp",
+        "thumb": "assets/img/art/vivi/vivi-01-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-02.webp",
+        "thumb": "assets/img/art/vivi/vivi-02-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-03.webp",
+        "thumb": "assets/img/art/vivi/vivi-03-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-04.webp",
+        "thumb": "assets/img/art/vivi/vivi-04-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-05.webp",
+        "thumb": "assets/img/art/vivi/vivi-05-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-06.webp",
+        "thumb": "assets/img/art/vivi/vivi-06-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-07.webp",
+        "thumb": "assets/img/art/vivi/vivi-07-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-08.webp",
+        "thumb": "assets/img/art/vivi/vivi-08-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-09.webp",
+        "thumb": "assets/img/art/vivi/vivi-09-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-10.webp",
+        "thumb": "assets/img/art/vivi/vivi-10-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/vivi/vivi-11.webp",
+        "thumb": "assets/img/art/vivi/vivi-11-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      }
+    ]
+  },
+  "yuria": {
+    "title": "Yuria",
+    "items": [
+      {
+        "full": "assets/img/art/yuria/yuria-01.webp",
+        "thumb": "assets/img/art/yuria/yuria-01-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-02.webp",
+        "thumb": "assets/img/art/yuria/yuria-02-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-03.webp",
+        "thumb": "assets/img/art/yuria/yuria-03-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-04.webp",
+        "thumb": "assets/img/art/yuria/yuria-04-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-05.webp",
+        "thumb": "assets/img/art/yuria/yuria-05-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-06.webp",
+        "thumb": "assets/img/art/yuria/yuria-06-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-07.webp",
+        "thumb": "assets/img/art/yuria/yuria-07-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-08.webp",
+        "thumb": "assets/img/art/yuria/yuria-08-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-09.webp",
+        "thumb": "assets/img/art/yuria/yuria-09-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-10.webp",
+        "thumb": "assets/img/art/yuria/yuria-10-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-11.webp",
+        "thumb": "assets/img/art/yuria/yuria-11-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-12.webp",
+        "thumb": "assets/img/art/yuria/yuria-12-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-13.webp",
+        "thumb": "assets/img/art/yuria/yuria-13-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      },
+      {
+        "full": "assets/img/art/yuria/yuria-14.webp",
+        "thumb": "assets/img/art/yuria/yuria-14-thumb.webp",
+        "w": 1744,
+        "h": 2336
+      }
+    ]
+  },
+  "memes": {
+    "title": "Memes",
+    "items": [
+      {
+        "full": "assets/img/art/memes/memes-01.webp",
+        "thumb": "assets/img/art/memes/memes-01-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/memes/memes-02.webp",
+        "thumb": "assets/img/art/memes/memes-02-thumb.webp",
+        "w": 1520,
+        "h": 2688
+      },
+      {
+        "full": "assets/img/art/memes/memes-03.webp",
+        "thumb": "assets/img/art/memes/memes-03-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/memes/memes-04.webp",
+        "thumb": "assets/img/art/memes/memes-04-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/memes/memes-05.webp",
+        "thumb": "assets/img/art/memes/memes-05-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/memes/memes-06.webp",
+        "thumb": "assets/img/art/memes/memes-06-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/memes/memes-07.webp",
+        "thumb": "assets/img/art/memes/memes-07-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/memes/memes-08.webp",
+        "thumb": "assets/img/art/memes/memes-08-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/memes/memes-09.webp",
+        "thumb": "assets/img/art/memes/memes-09-thumb.webp",
+        "w": 1520,
+        "h": 2688
+      },
+      {
+        "full": "assets/img/art/memes/memes-10.webp",
+        "thumb": "assets/img/art/memes/memes-10-thumb.webp",
+        "w": 1520,
+        "h": 2688
+      },
+      {
+        "full": "assets/img/art/memes/memes-11.webp",
+        "thumb": "assets/img/art/memes/memes-11-thumb.webp",
+        "w": 1792,
+        "h": 2304
+      },
+      {
+        "full": "assets/img/art/memes/memes-12.webp",
+        "thumb": "assets/img/art/memes/memes-12-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/memes/memes-13.webp",
+        "thumb": "assets/img/art/memes/memes-13-thumb.webp",
+        "w": 1360,
+        "h": 2048
+      },
+      {
+        "full": "assets/img/art/memes/memes-14.webp",
+        "thumb": "assets/img/art/memes/memes-14-thumb.webp",
+        "w": 2048,
+        "h": 1360
+      },
+      {
+        "full": "assets/img/art/memes/memes-15.webp",
+        "thumb": "assets/img/art/memes/memes-15-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/memes/memes-16.webp",
+        "thumb": "assets/img/art/memes/memes-16-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/memes/memes-17.webp",
+        "thumb": "assets/img/art/memes/memes-17-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      }
+    ]
+  }
+}

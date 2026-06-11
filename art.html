@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Art &amp; Imagen — Kurt Lyle Paulino</title>
+<meta name="description" content="Illustration and AI-assisted art by Kurt Lyle Paulino — ink-and-watercolor portraits, character-consistency studies (Vivi, Yuria), and memes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/art.css">
+</head>
+<body data-theme="art">
+
+<header class="nav">
+  <a class="nav__brand" href="index.html">← Kurt&nbsp;Lyle&nbsp;<b>Paulino</b></a>
+  <nav class="nav__links">
+    <a href="art.html">Art</a>
+    <a href="music.html">Music</a>
+    <a href="projects.html">Projects</a>
+    <a href="writing.html">Writing</a>
+    <a class="cta" href="index.html">Hub</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap page-hero__inner">
+    <div class="ornament">❦ ⚜ ❦</div>
+    <span class="eyebrow">01 — Visual</span>
+    <h1>Art &amp; Imagen</h1>
+    <p class="lede">Ink-and-watercolor portraits, flowers blooming through decay, and studies in
+      keeping a character consistent across many frames. Pieces are grouped — click any to open the
+      lightbox, or hit ▶ to let it drift on its own.</p>
+  </div>
+  <div class="wrap"><div class="filters" id="filters"></div></div>
+</section>
+
+<main class="wrap" id="groups" style="padding-bottom:4rem">
+  <p style="color:var(--ink-faint);font-family:var(--mono)">Loading gallery…</p>
+</main>
+
+<!-- lightbox -->
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb__nav prev" id="lb-prev" aria-label="Previous">prev</button>
+  <button class="lb__nav next" id="lb-next" aria-label="Next">next</button>
+  <img class="lb__img" id="lb-img" alt="Artwork">
+  <button class="lb__btn lb__close" id="lb-close" aria-label="Close">✕</button>
+  <div class="lb__bar">
+    <button class="lb__btn" id="lb-prev2" onclick="document.getElementById('lb-prev').click()" aria-label="Previous">‹</button>
+    <span class="lb__count" id="lb-count">0 / 0</span>
+    <button class="lb__btn lb__play" id="lb-play" aria-label="Slideshow">▶</button>
+    <button class="lb__btn" id="lb-next2" onclick="document.getElementById('lb-next').click()" aria-label="Next">›</button>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="wrap foot__row">
+    <a href="index.html">← Back to the hub</a>
+    <div style="display:flex;gap:1.4rem;flex-wrap:wrap">
+      <a href="music.html">Music →</a><a href="projects.html">Projects →</a><a href="writing.html">Writing →</a>
+    </div>
+    <small>© <span id="yr"></span> Kurt Lyle Paulino</small>
+  </div>
+</footer>
+
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/art.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "tracks": [
+    {
+      "src": "assets/audio/be-not-afraid.mp3",
+      "title": "PANDÆMONIUM — Be Not Afraid",
+      "vibe": "industrial · sacred"
+    },
+    {
+      "src": "assets/audio/kill-die-repeat.mp3",
+      "title": "PANDÆMONIUM — Kill, Die, Repeat",
+      "vibe": "industrial · relentless"
+    },
+    {
+      "src": "assets/audio/neon-ghost.mp3",
+      "title": "Neon Ghost (Imagine Her)",
+      "vibe": "synthwave · cyber"
+    },
+    {
+      "src": "assets/audio/gutter-pulse.mp3",
+      "title": "Gutter Pulse",
+      "vibe": "darkwave · pulse"
+    },
+    {
+      "src": "assets/audio/defective-by-design.mp3",
+      "title": "Defective By Design",
+      "vibe": "industrial"
+    },
+    {
+      "src": "assets/audio/aoi-softly.mp3",
+      "title": "AOI, Softly",
+      "vibe": "ambient · soft"
+    },
+    {
+      "src": "assets/audio/weight-of-a-good-person.mp3",
+      "title": "The Weight of a Good Person",
+      "vibe": "cinematic"
+    },
+    {
+      "src": "assets/audio/slayer-sage-king.mp3",
+      "title": "The Slayer, The Sage, and The King",
+      "vibe": "epic · narrative"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.idea/
+.vscode/
+
+# Python pipeline cache
+__pycache__/
+*.pyc
+
+# never commit the heavy originals (they live in sibling folders, not here)
+*.zip
+*.exe
+*.keras
+*.mp4
