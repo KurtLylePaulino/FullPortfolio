@@ -10,7 +10,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700;900&family=Cinzel:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="intro-playing">
+  <!-- opening sequence: temple doors part to reveal the jianghu -->
+  <div class="intro" id="intro" role="presentation">
+    <div class="intro-door left"><span class="door-glyph">江</span></div>
+    <div class="intro-door right"><span class="door-glyph">湖</span></div>
+    <div class="intro-center">
+      <div class="intro-title"><span>江</span><span>湖</span><span>箴</span><span>言</span></div>
+      <button class="intro-seal" id="introEnter" type="button">入江湖</button>
+      <p class="intro-hint">点击开启 · click to enter</p>
+    </div>
+    <div class="intro-slash"></div>
+  </div>
+
+  <!-- animated jianghu scenery -->
+  <div class="scenery" aria-hidden="true">
+    <div class="moon"></div>
+    <div class="range range-far">
+      <svg viewBox="0 0 1200 260" preserveAspectRatio="none">
+        <path fill="#2b1c13" d="M0 260 L0 150 Q80 90 160 140 T340 120 Q420 60 500 130 T700 110 Q800 50 880 120 T1060 100 Q1140 70 1200 130 L1200 260 Z"/>
+      </svg>
+    </div>
+    <div class="range range-mid">
+      <svg viewBox="0 0 1200 260" preserveAspectRatio="none">
+        <path fill="#1e120b" d="M0 260 L0 190 Q100 140 200 180 T420 160 Q520 100 640 170 T880 150 Q990 110 1100 170 L1200 150 L1200 260 Z"/>
+        <g fill="#1e120b" transform="translate(880,62)">
+          <path d="M30 0 L34 0 L34 10 L30 10 Z"/>
+          <path d="M14 24 L32 8 L50 24 L44 24 L44 32 L20 32 L20 24 Z"/>
+          <path d="M8 46 L32 28 L56 46 L48 46 L48 54 L16 54 L16 46 Z"/>
+          <path d="M2 68 L32 48 L62 68 L52 68 L52 98 L12 98 L12 68 Z"/>
+        </g>
+      </svg>
+    </div>
+    <div class="range range-near">
+      <svg viewBox="0 0 1200 260" preserveAspectRatio="none">
+        <path fill="#130a06" d="M0 260 L0 215 Q140 170 260 210 T520 195 Q660 150 800 205 T1080 190 L1200 200 L1200 260 Z"/>
+      </svg>
+    </div>
+    <div class="fog fog-1"></div>
+    <div class="fog fog-2"></div>
+    <div class="birds">
+      <svg width="140" height="50" viewBox="0 0 140 50" fill="none" stroke="#d8c79a" stroke-width="2" stroke-linecap="round">
+        <path d="M10 24 q7 -9 14 0 q7 -9 14 0"/>
+        <path d="M64 12 q6 -8 12 0 q6 -8 12 0"/>
+        <path d="M100 34 q5 -7 10 0 q5 -7 10 0"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- falling plum-blossom petals -->
+  <div class="petals" id="petals" aria-hidden="true"></div>
+
+  <!-- hanging red lanterns -->
+  <div class="lantern lantern-l" aria-hidden="true">
+    <div class="cord"></div>
+    <div class="body">武</div>
+    <div class="tassel"></div>
+  </div>
+  <div class="lantern lantern-r" aria-hidden="true">
+    <div class="cord"></div>
+    <div class="body">俠</div>
+    <div class="tassel"></div>
+  </div>
+
   <!-- decorative drifting ink mist -->
   <div class="mist mist-a" aria-hidden="true"></div>
   <div class="mist mist-b" aria-hidden="true"></div>
@@ -24,7 +86,7 @@
       <div class="seal" aria-hidden="true">箴<br>言</div>
       <h1 class="title">江湖箴言</h1>
       <p class="subtitle">Wisdom of the Rivers &amp; Lakes</p>
-      <p class="tagline">一百五十则古训 · 抽取一卷 · Draw a scroll from 150 sages</p>
+      <p class="tagline">二百则古训 · 抽取一卷 · Draw a scroll from 200 sages</p>
     </header>
 
     <!-- the hanging scroll -->
@@ -36,6 +98,7 @@
           <div class="corner tr" aria-hidden="true"></div>
           <div class="corner bl" aria-hidden="true"></div>
           <div class="corner br" aria-hidden="true"></div>
+          <div class="slash" aria-hidden="true"></div>
 
           <blockquote class="proverb">
             <p class="zh" id="zh">点击下方「抽签」<br>以启江湖之智</p>
@@ -63,14 +126,26 @@
         <span class="btn-glyph">抄</span>
         <span class="btn-label" id="copyLabel">抄录 · Copy</span>
       </button>
+      <button class="btn btn-music" id="musicBtn" type="button" aria-pressed="false">
+        <span class="btn-glyph">琴</span>
+        <span class="btn-label" id="musicLabel">奏乐 · Music</span>
+      </button>
     </nav>
 
     <footer class="foot">
-      <span id="counter">— 江湖共一百五十卷 · 150 scrolls —</span>
+      <span id="counter">— 江湖共二百卷 · 200 scrolls —</span>
     </footer>
   </main>
 
+  <!-- sound-effects toggle -->
+  <button class="sound-toggle" id="soundBtn" type="button" aria-pressed="true" aria-label="Toggle sound effects" title="音效 · Sound effects">
+    <span class="glyph-on">音</span>
+    <span class="glyph-off">静</span>
+  </button>
+
   <script src="js/proverbs.js"></script>
+  <script src="js/sfx.js"></script>
+  <script src="js/audio.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

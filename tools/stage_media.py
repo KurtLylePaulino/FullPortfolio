@@ -12,7 +12,7 @@ IMG_OUT = ROOT / "assets" / "img" / "projects"
 PROJECT_IMAGES = [
     ("PROJECTS/CIRCUIT BREAKERS/GameScreenshot.png", "circuit-breakers"),
     ("PROJECTS/WEBDEV/HAIKU DAILY/Screenshot 2026-06-11 112843.png", "haiku-daily"),
-    ("PROJECTS/WEBDEV/Jianghu Proverbs/Screenshot 2026-06-11 112815.png", "jianghu-proverbs"),
+    ("PROJECTS/WEBDEV/Jianghu Proverbs/Screenshot 2026-06-11 173524.png", "jianghu-proverbs"),
 ]
 
 def main():

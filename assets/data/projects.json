@@ -98,20 +98,21 @@
       "year": "2025",
       "featured": false,
       "award": null,
-      "tagline": "Static site · 150 attributed Chinese proverbs",
-      "blurb": "A wuxia/murim silk-scroll that rolls a random Chinese proverb from 150 classics — original text, pinyin, English, and full attribution across 52 sources.",
-      "summary": "A single-page static site styled as a hanging silk scroll on aged rice paper that rolls a random Chinese proverb from a curated set of 150 classics across 52 sources — Confucius, Laozi, Sun Tzu and more — each with original text, pinyin, an English rendering, and full attribution. Cinnabar seals, gold calligraphy, drifting ink mist, keyboard controls, and a prefers-reduced-motion fallback.",
-      "stack": ["HTML", "CSS", "Vanilla JS", "i18n", "GitHub Pages"],
+      "tagline": "Static site · 200 attributed Chinese proverbs · living wuxia scene",
+      "blurb": "A living wuxia/murim silk-scroll that rolls a random Chinese proverb from 200 classics — with animated scenery, looping music, a synthesized Web Audio soundscape, and brush-on-screen calligraphy.",
+      "summary": "A single-page static site staged as a living wuxia/murim scene — a hanging silk scroll on aged rice paper, swaying red lanterns, parallax mountains with a distant pagoda, a breathing moon, and falling plum-blossom petals. It rolls a random proverb from 200 classics across 79 sources (Confucius, Laozi, Sun Tzu, Li Bai, the Water Margin, and more) with original text, pinyin, English, and full attribution. Each draw slashes a glint across the paper, brush-writes the proverb character by character, and stamps an index seal. A click-to-enter gate unlocks audio: a looping erhu-style track ('Silent Bamboo Path', lazy-loaded) plus a fully synthesized Web Audio soundscape — temple bell, fortune-stick rattle, sword glint, brush ticks, and seal thunk — all generated live, rate-limited, and ducked beneath the music. No build step, no dependencies.",
+      "stack": ["HTML", "CSS", "Vanilla JS", "Web Audio API", "GitHub Pages"],
       "highlights": [
-        "150 attributed proverbs across 52 sources",
-        "Original text + pinyin + English + attribution",
-        "Wuxia/murim art direction with cinnabar seals & ink mist",
-        "Keyboard controls + reduced-motion fallback"
+        "200 attributed proverbs across 79 sources",
+        "Looping music + fully synthesized Web Audio soundscape (no sound files)",
+        "Animated scenery: parallax mountains, swaying lanterns, petals, breathing moon",
+        "Cinematic opening sequence + character-by-character brush calligraphy",
+        "Keyboard controls + prefers-reduced-motion fallback"
       ],
       "metrics": [
-        { "label": "Proverbs", "value": "150" },
-        { "label": "Sources", "value": "52" },
-        { "label": "Build", "value": "None" }
+        { "label": "Proverbs", "value": "200" },
+        { "label": "Sources", "value": "79" },
+        { "label": "Audio", "value": "Web Audio" }
       ],
       "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/jianghu-proverbs.webp",
       "demo": "https://kurtlylepaulino.github.io/FullPortfolio/projects/jianghu-proverbs/index.html",
