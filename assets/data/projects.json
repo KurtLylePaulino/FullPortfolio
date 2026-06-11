@@ -1,0 +1,151 @@
+{
+  "_comment": "SINGLE SOURCE OF TRUTH for technical projects. Rendered by FullPortfolio (summary cards) AND fetched cross-site by TechnicalPortfolio (deep view + demo embeds). All media/doc/demo URLs are ABSOLUTE to the FullPortfolio deployment so both sites resolve them identically. To add a project: append an entry here (and, if it has a live demo, drop the static site under FullPortfolio/projects/<id>/). Push -> both sites update.",
+  "base": "https://kurtlylepaulino.github.io/FullPortfolio",
+  "projects": [
+    {
+      "id": "circuit-breakers",
+      "title": "Circuit Breakers",
+      "category": "game",
+      "year": "2024–present",
+      "featured": true,
+      "award": "Best Thesis · Best Paper · Best Presenter",
+      "tagline": "2D cybersecurity roguelike · Unity · Thesis",
+      "blurb": "A 2D roguelike that teaches cybersecurity through play. Lead author on the award-winning paper; ran the numerical balancing across gameplay and database systems.",
+      "summary": "Circuit Breakers is a 2D PC roguelike that turns cybersecurity concepts into roguelike runs. As lead author I owned the award-winning thesis and technical documentation, executed the numerical balancing for gameplay and the Firebase-backed database systems, and built functionality spanning UI, mechanics, and progression. It won Best Thesis, Best Paper, and Best Presenter.",
+      "stack": ["Unity", "C#", "Firebase", "Firestore"],
+      "highlights": [
+        "Lead author on the award-winning thesis & technical documentation",
+        "Numerical balancing across gameplay and database systems",
+        "Built features from UI and buttons to core mechanics",
+        "Firebase auth, stats, and achievements integration"
+      ],
+      "metrics": [
+        { "label": "Awards", "value": "3×" },
+        { "label": "Engine", "value": "Unity" },
+        { "label": "Role", "value": "Lead author" }
+      ],
+      "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/circuit-breakers.webp",
+      "demo": null,
+      "links": [
+        { "label": "Download build (Windows)", "href": "https://drive.google.com/drive/folders/1MR4GVBB7N-VR-IjFD2au542m6tY4nwLT?usp=sharing", "kind": "primary" },
+        { "label": "Read the thesis", "href": "https://kurtlylepaulino.github.io/FullPortfolio/assets/docs/IMRAD_FinalManuscript_CircuitBreakers.pdf" },
+        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+      ]
+    },
+    {
+      "id": "melanoma-cnn",
+      "title": "Melanoma Skin Cancer Detection",
+      "category": "ml",
+      "year": "2025",
+      "featured": true,
+      "award": null,
+      "tagline": "Convolutional neural network · Capstone",
+      "blurb": "A CNN that classifies dermoscopic images as benign or malignant at 90%+ accuracy, with experiments comparing optimizers and activation functions.",
+      "summary": "A convolutional neural network built in TensorFlow/Keras that classifies dermoscopic images as benign or malignant at over 90% accuracy. I engineered and ran several experimental iterations — comparing optimizers and activation functions — to identify the most stable convergence patterns, all documented in the notebook. The shared Drive folder bundles the trained model, saved checkpoints, the dataset, and the base notebooks.",
+      "stack": ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
+      "highlights": [
+        "90%+ classification accuracy on benign vs. malignant",
+        "Comparative experiments across optimizers and activation functions",
+        "Convergence-stability analysis to pick the strongest configuration",
+        "Reproducible notebook + saved model checkpoints"
+      ],
+      "metrics": [
+        { "label": "Accuracy", "value": "90%+" },
+        { "label": "Task", "value": "Binary classification" },
+        { "label": "Framework", "value": "TF/Keras" }
+      ],
+      "media": null,
+      "demo": null,
+      "links": [
+        { "label": "Models + dataset", "href": "https://drive.google.com/drive/folders/13oZi_EPwOwdQE_8IwyITkMBv0eWrohD7?usp=drive_link", "kind": "primary" },
+        { "label": "Download notebook", "href": "https://kurtlylepaulino.github.io/FullPortfolio/assets/docs/melanoma_model.ipynb" },
+        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+      ]
+    },
+    {
+      "id": "haiku-daily",
+      "title": "Haiku Daily",
+      "category": "web",
+      "year": "2025",
+      "featured": false,
+      "award": null,
+      "tagline": "Static site · one classical haiku per day",
+      "blurb": "A washi-paper site serving one public-domain haiku per day, with drifting sakura petals and an optional generative koto soundscape (Web Audio).",
+      "summary": "A zero-dependency static site that surfaces one public-domain haiku per day from the classical masters — Bashō, Issa, Buson — chosen deterministically from the calendar date. Features drifting sakura petals, a copy button, keyboard controls, and an optional generative koto soundscape synthesized live with the Web Audio API. No build step, no framework.",
+      "stack": ["HTML", "CSS", "Vanilla JS", "Web Audio API", "GitHub Pages"],
+      "highlights": [
+        "Deterministic daily selection from the calendar date",
+        "Generative koto soundscape via the Web Audio API",
+        "Drifting sakura particle system in vanilla JS",
+        "No build step, no dependencies"
+      ],
+      "metrics": [
+        { "label": "Deps", "value": "0" },
+        { "label": "Build", "value": "None" },
+        { "label": "Audio", "value": "Web Audio" }
+      ],
+      "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/haiku-daily.webp",
+      "demo": "https://kurtlylepaulino.github.io/FullPortfolio/projects/haiku-daily/index.html",
+      "links": [
+        { "label": "Live demo", "href": "https://kurtlylepaulino.github.io/FullPortfolio/projects/haiku-daily/index.html", "kind": "primary" },
+        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+      ]
+    },
+    {
+      "id": "jianghu-proverbs",
+      "title": "江湖箴言 · Jianghu Proverbs",
+      "category": "web",
+      "year": "2025",
+      "featured": false,
+      "award": null,
+      "tagline": "Static site · 150 attributed Chinese proverbs",
+      "blurb": "A wuxia/murim silk-scroll that rolls a random Chinese proverb from 150 classics — original text, pinyin, English, and full attribution across 52 sources.",
+      "summary": "A single-page static site styled as a hanging silk scroll on aged rice paper that rolls a random Chinese proverb from a curated set of 150 classics across 52 sources — Confucius, Laozi, Sun Tzu and more — each with original text, pinyin, an English rendering, and full attribution. Cinnabar seals, gold calligraphy, drifting ink mist, keyboard controls, and a prefers-reduced-motion fallback.",
+      "stack": ["HTML", "CSS", "Vanilla JS", "i18n", "GitHub Pages"],
+      "highlights": [
+        "150 attributed proverbs across 52 sources",
+        "Original text + pinyin + English + attribution",
+        "Wuxia/murim art direction with cinnabar seals & ink mist",
+        "Keyboard controls + reduced-motion fallback"
+      ],
+      "metrics": [
+        { "label": "Proverbs", "value": "150" },
+        { "label": "Sources", "value": "52" },
+        { "label": "Build", "value": "None" }
+      ],
+      "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/jianghu-proverbs.webp",
+      "demo": "https://kurtlylepaulino.github.io/FullPortfolio/projects/jianghu-proverbs/index.html",
+      "links": [
+        { "label": "Live demo", "href": "https://kurtlylepaulino.github.io/FullPortfolio/projects/jianghu-proverbs/index.html", "kind": "primary" },
+        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+      ]
+    },
+    {
+      "id": "library-system",
+      "title": "Library Management System",
+      "category": "web",
+      "year": "2024",
+      "featured": false,
+      "award": null,
+      "tagline": "Multi-role web app · CRUD",
+      "blurb": "A library platform tracking books, users, and activity across Admin, Librarian, and Borrower roles, with activity logging and transaction records.",
+      "summary": "A web platform that tracks books, users, and activity across three roles — Admin, Librarian, and Borrower. I built the CRUD systems, user-activity logging, and transaction records, and designed the interactions and feedback flows between all three user types.",
+      "stack": ["HTML", "CSS", "JavaScript", "CRUD"],
+      "highlights": [
+        "Three role types: Admin, Librarian, Borrower",
+        "Full CRUD for books and users",
+        "User-activity logging and transaction records",
+        "Cross-role interaction and feedback flows"
+      ],
+      "metrics": [
+        { "label": "Roles", "value": "3" },
+        { "label": "Domain", "value": "CRUD" }
+      ],
+      "media": null,
+      "demo": null,
+      "links": [
+        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+      ]
+    }
+  ]
+}

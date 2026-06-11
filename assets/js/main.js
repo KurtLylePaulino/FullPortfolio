@@ -10,18 +10,21 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  // --- reveal on scroll ---
-  const reveals = document.querySelectorAll(".reveal");
-  if (reveals.length && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
+  // --- reveal on scroll (exposed so dynamically-injected nodes can register too) ---
+  let io = null;
+  if ("IntersectionObserver" in window) {
+    io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
-    reveals.forEach((el, i) => { el.style.transitionDelay = (i % 6) * 60 + "ms"; io.observe(el); });
-  } else {
-    reveals.forEach((el) => el.classList.add("in"));
   }
+  window.__observeReveals = function (nodes) {
+    if (!nodes) nodes = document.querySelectorAll(".reveal");
+    if (!io) { nodes.forEach((el) => el.classList.add("in")); return; }
+    nodes.forEach((el, i) => { el.style.transitionDelay = (i % 6) * 60 + "ms"; io.observe(el); });
+  };
+  window.__observeReveals();
 
   // --- hero particle field (embers / abyssal dust) ---
   const canvas = document.getElementById("hero-canvas");
