@@ -24,27 +24,6 @@ projects/
 tools/   optimize_images.py, stage_media.py (asset pipeline — not served)
 ```
 
-## Run locally
-
-Any static server works:
-
-```bash
-python -m http.server 5500
-# open http://localhost:5500
-```
-
-## Deploy to GitHub Pages
-
-1. Create a repo named **`FullPortfolio`** and push this folder to `main`:
-   ```bash
-   git remote add origin https://github.com/KurtLylePaulino/FullPortfolio.git
-   git push -u origin main
-   ```
-2. **Settings → Pages → Source: Deploy from a branch →** `main` / `/ (root)`.
-3. Live at `https://KurtLylePaulino.github.io/FullPortfolio/`.
-
-`.nojekyll` is included so assets are served as-is.
-
 ## Heavy assets (intentionally off-site)
 
 To keep the repo lean and Pages fast, large originals are **not** committed
