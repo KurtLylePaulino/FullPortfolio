@@ -30,8 +30,26 @@ body[data-theme="music"] h1, body[data-theme="music"] .world__title { font-famil
 @keyframes gl1 { 0%,92%,100%{clip-path:inset(0 0 100% 0)} 94%{clip-path:inset(20% 0 40% 0)} 96%{clip-path:inset(60% 0 10% 0)} }
 @keyframes gl2 { 0%,90%,100%{clip-path:inset(100% 0 0 0)} 93%{clip-path:inset(40% 0 30% 0)} 97%{clip-path:inset(10% 0 70% 0)} }
 
-/* tracklist */
-.tracks { margin: 1.5rem 0 9rem; border-top: 1px solid var(--line); }
+/* filter tabs */
+.filters { display: flex; gap: .5rem; flex-wrap: wrap; }
+.filter {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  padding: .5rem 1.05rem; border: 1px solid var(--line); border-radius: 999px;
+  color: var(--ink-soft); background: transparent; cursor: pointer; transition: all .25s var(--ease);
+}
+.filter:hover { color: var(--ink); border-color: var(--accent); }
+.filter.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); box-shadow: var(--glow); }
+.filter b { opacity: .55; font-weight: 700; }
+
+/* category sections */
+.tracks { margin: 1.5rem 0 9rem; }
+.cat { margin-bottom: 2.4rem; }
+.cat__head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: .4rem; }
+.cat__head h2 { font-family: var(--mono); font-weight: 700; font-size: 1.35rem; letter-spacing: .02em; color: var(--accent); }
+.cat__count { font-family: var(--mono); font-size: .68rem; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-faint); }
+.cat__line { flex: 1; height: 1px; background: linear-gradient(to right, var(--line), transparent); }
+.cat__blurb { color: var(--ink-soft); font-size: .92rem; margin: 0 0 1rem; max-width: 60ch; }
+.cat__tracks { border-top: 1px solid var(--line); }
 .track {
   display: grid; grid-template-columns: 3rem 1fr auto; align-items: center; gap: 1rem;
   padding: 1.05rem .6rem; border-bottom: 1px solid var(--line); cursor: pointer;

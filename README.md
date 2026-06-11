@@ -7,7 +7,7 @@ dependencies — designed to deploy free on **GitHub Pages**.
 ```
 index.html        Hub / landing (the central node)
 art.html          Visual — grouped galleries + lightbox + slideshow
-music.html        Sound — streaming audio player (8 tracks)
+music.html        Sound — player w/ 3 playlists (Original · DnD · Library of Ruina), 37 tracks
 projects.html     Technical — game, ML, web apps
 writing.html      Literary — Canrael lore + a downloadable PDF codex
 
@@ -69,5 +69,6 @@ If you add or change source art/music (in the sibling `AI imagen/`, `MUSIC/`,
 
 ```bash
 python tools/optimize_images.py   # art -> WebP + assets/data/art.json
-python tools/stage_media.py       # music + project shots + manifests
+python tools/stage_music.py       # 3 music libraries -> assets/audio/* + music.json (de-duped)
+python tools/stage_media.py       # project screenshots -> WebP
 ```

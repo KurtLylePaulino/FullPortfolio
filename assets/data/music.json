@@ -1,44 +1,210 @@
 {
-  "tracks": [
+  "categories": [
     {
-      "src": "assets/audio/be-not-afraid.mp3",
-      "title": "PANDÆMONIUM — Be Not Afraid",
-      "vibe": "industrial · sacred"
+      "key": "original",
+      "title": "Original",
+      "blurb": "Industrial liturgies, neon ghosts, and cinematic dread — my own singles.",
+      "tracks": [
+        {
+          "src": "assets/audio/original/aoi-softly.mp3",
+          "title": "AOI, SOFTLY",
+          "vibe": "ambient · soft"
+        },
+        {
+          "src": "assets/audio/original/defective-by-design.mp3",
+          "title": "Defective By Design",
+          "vibe": "industrial"
+        },
+        {
+          "src": "assets/audio/original/gutter-pulse.mp3",
+          "title": "Gutter Pulse",
+          "vibe": "darkwave · pulse"
+        },
+        {
+          "src": "assets/audio/original/neon-ghost-imagine-her.mp3",
+          "title": "Neon Ghost (Imagine Her)",
+          "vibe": "synthwave · cyber"
+        },
+        {
+          "src": "assets/audio/original/pandaemonium-be-not-afraid.mp3",
+          "title": "PANDÆMONIUM — BE NOT AFRAID",
+          "vibe": "industrial · sacred"
+        },
+        {
+          "src": "assets/audio/original/pandaemonium-kill-die-repeat.mp3",
+          "title": "PANDÆMONIUM — KILL DIE REPEAT",
+          "vibe": "industrial · relentless"
+        }
+      ]
     },
     {
-      "src": "assets/audio/kill-die-repeat.mp3",
-      "title": "PANDÆMONIUM — Kill, Die, Repeat",
-      "vibe": "industrial · relentless"
+      "key": "dnd",
+      "title": "DnD · Canrael Campaign",
+      "blurb": "Score and ballads written for the world of Canrael at the table.",
+      "tracks": [
+        {
+          "src": "assets/audio/dnd/a-silver-lining-for-the-void.mp3",
+          "title": "A Silver Lining for the Void",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/beneath-the-waking-tree.mp3",
+          "title": "Beneath the Waking Tree",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/cantus-remembrantium.mp3",
+          "title": "Cantus Remembrantium",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/hail-the-fate-breaker.mp3",
+          "title": "Hail the Fate Breaker",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/he-swore-he-d-be-home.mp3",
+          "title": "He Swore He'd Be Home",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/keep-the-dark-at-bay.mp3",
+          "title": "KEEP THE DARK AT BAY",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/one-more-minute-til-dawn.mp3",
+          "title": "ONE MORE MINUTE TIL DAWN",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/pandaemonium-angel-error.mp3",
+          "title": "PANDÆMONIUM — ANGEL ERROR",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/pandaemonium-halo-override.mp3",
+          "title": "PANDÆMONIUM — HALO OVERRIDE",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/pandaemonium-seraphim-asset.mp3",
+          "title": "PANDÆMONIUM — SERAPHIM ASSET",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/roll-her-north-my-lads.mp3",
+          "title": "Roll Her North, My Lads",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-city-eats-the-city-feeds.mp3",
+          "title": "THE CITY EATS, THE CITY FEEDS",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-empty-chair-at-the-feast.mp3",
+          "title": "The Empty Chair at the Feast",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-farmer-s-tax-the-king-and-the-scythe.mp3",
+          "title": "The Farmer’s Tax (The King and the Scythe)",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-golden-harvest-of-sator.mp3",
+          "title": "The Golden Harvest of Sator",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-merry-dog-of-fate.mp3",
+          "title": "The Merry Dog of Fate",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-price-of-a-loaf.mp3",
+          "title": "The Price of a Loaf",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-road-that-swallowed-the-sun.mp3",
+          "title": "The Road That Swallowed the Sun",
+          "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-slayer-the-sage-and-the-king.mp3",
+          "title": "The Slayer, The Sage, and The King",
+          "vibe": "epic · narrative"
+        },
+        {
+          "src": "assets/audio/dnd/the-sovereign-and-his-shadows.mp3",
+          "title": "The Sovereign and His Shadows",
+          "vibe": "campaign score"
+        }
+      ]
     },
     {
-      "src": "assets/audio/neon-ghost.mp3",
-      "title": "Neon Ghost (Imagine Her)",
-      "vibe": "synthwave · cyber"
-    },
-    {
-      "src": "assets/audio/gutter-pulse.mp3",
-      "title": "Gutter Pulse",
-      "vibe": "darkwave · pulse"
-    },
-    {
-      "src": "assets/audio/defective-by-design.mp3",
-      "title": "Defective By Design",
-      "vibe": "industrial"
-    },
-    {
-      "src": "assets/audio/aoi-softly.mp3",
-      "title": "AOI, Softly",
-      "vibe": "ambient · soft"
-    },
-    {
-      "src": "assets/audio/weight-of-a-good-person.mp3",
-      "title": "The Weight of a Good Person",
-      "vibe": "cinematic"
-    },
-    {
-      "src": "assets/audio/slayer-sage-king.mp3",
-      "title": "The Slayer, The Sage, and The King",
-      "vibe": "epic · narrative"
+      "key": "ruina",
+      "title": "Library of Ruina · Fan Works",
+      "blurb": "Fan songs composed in tribute to Library of Ruina.",
+      "tracks": [
+        {
+          "src": "assets/audio/ruina/a-crown-of-paper-stars-edit.mp3",
+          "title": "A Crown of Paper Stars (Edit)",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/a-perfect-papercut-bedroom.mp3",
+          "title": "A Perfect Papercut Bedroom",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/a-sword-cannot-hold.mp3",
+          "title": "A Sword Cannot Hold",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/adagio-for-the-mask.mp3",
+          "title": "Adagio for the Mask",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/one-last-sip-of-coffee.mp3",
+          "title": "One Last Sip of Coffee",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/the-arbiter-s-tea.mp3",
+          "title": "The Arbiter’s Tea",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/the-high-of-the-low.mp3",
+          "title": "The High of the Low",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/the-pale-script.mp3",
+          "title": "The Pale Script",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/the-standard-deviation.mp3",
+          "title": "The Standard Deviation",
+          "vibe": "library of ruina"
+        },
+        {
+          "src": "assets/audio/ruina/the-weight-of-a-good-person.mp3",
+          "title": "The Weight of a Good Person",
+          "vibe": "cinematic"
+        },
+        {
+          "src": "assets/audio/ruina/the-weight-of-eternity-hokma.mp3",
+          "title": "The Weight of Eternity HOKMA",
+          "vibe": "library of ruina"
+        }
+      ]
     }
   ]
 }
