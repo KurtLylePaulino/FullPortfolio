@@ -1,6 +1,39 @@
 {
   "categories": [
     {
+      "key": "personal",
+      "title": "Personal Picks",
+      "pick": true,
+      "blurb": "A quick-access showcase — five tracks worth starting with, tagged by genre.",
+      "tracks": [
+        {
+          "src": "assets/audio/original/the-reload-junction.mp3",
+          "title": "The Reload Junction",
+          "vibe": "Acoustic Café Cover · Soft Indie Folk"
+        },
+        {
+          "src": "assets/audio/ruina/one-last-sip-of-coffee.mp3",
+          "title": "One Last Sip of Coffee",
+          "vibe": "Acoustic Café Cover · Soft Indie Folk"
+        },
+        {
+          "src": "assets/audio/dnd/pandaemonium-kill-die-repeat.mp3",
+          "title": "PANDÆMONIUM — Kill, Die, Repeat",
+          "vibe": "Cyberpunk Glitch Core"
+        },
+        {
+          "src": "assets/audio/ruina/a-crown-of-paper-stars-edit.mp3",
+          "title": "A Crown of Paper Stars",
+          "vibe": "Dark Orchestral · Melancholic Waltz"
+        },
+        {
+          "src": "assets/audio/dnd/keep-the-dark-at-bay.mp3",
+          "title": "Keep the Dark at Bay",
+          "vibe": "Work Anthem"
+        }
+      ]
+    },
+    {
       "key": "original",
       "title": "Original",
       "blurb": "Industrial liturgies, neon ghosts, and cinematic dread — my own singles.",
@@ -11,8 +44,8 @@
           "vibe": "ambient · soft"
         },
         {
-          "src": "assets/audio/original/defective-by-design.mp3",
-          "title": "Defective By Design",
+          "src": "assets/audio/original/debt-of-life2.mp3",
+          "title": "DEBT OF LIFE²",
           "vibe": "industrial"
         },
         {
@@ -26,14 +59,14 @@
           "vibe": "synthwave · cyber"
         },
         {
-          "src": "assets/audio/original/pandaemonium-be-not-afraid.mp3",
-          "title": "PANDÆMONIUM — BE NOT AFRAID",
-          "vibe": "industrial · sacred"
+          "src": "assets/audio/original/the-crossroads-option.mp3",
+          "title": "The Crossroads Option",
+          "vibe": "original"
         },
         {
-          "src": "assets/audio/original/pandaemonium-kill-die-repeat.mp3",
-          "title": "PANDÆMONIUM — KILL DIE REPEAT",
-          "vibe": "industrial · relentless"
+          "src": "assets/audio/original/the-reload-junction.mp3",
+          "title": "The Reload Junction",
+          "vibe": "original"
         }
       ]
     },
@@ -42,6 +75,21 @@
       "title": "DnD · Canrael Campaign",
       "blurb": "Score and ballads written for the world of Canrael at the table.",
       "tracks": [
+        {
+          "src": "assets/audio/dnd/pandaemonium-be-not-afraid.mp3",
+          "title": "PANDÆMONIUM — BE NOT AFRAID",
+          "vibe": "industrial · cyber"
+        },
+        {
+          "src": "assets/audio/dnd/pandaemonium-kill-die-repeat.mp3",
+          "title": "PANDÆMONIUM — KILL DIE REPEAT",
+          "vibe": "industrial · cyber"
+        },
+        {
+          "src": "assets/audio/dnd/the-slayer-the-sage-and-the-king.mp3",
+          "title": "The Slayer, The Sage, and The King",
+          "vibe": "epic · narrative"
+        },
         {
           "src": "assets/audio/dnd/a-silver-lining-for-the-void.mp3",
           "title": "A Silver Lining for the Void",
@@ -80,17 +128,17 @@
         {
           "src": "assets/audio/dnd/pandaemonium-angel-error.mp3",
           "title": "PANDÆMONIUM — ANGEL ERROR",
-          "vibe": "campaign score"
+          "vibe": "industrial · cyber"
         },
         {
           "src": "assets/audio/dnd/pandaemonium-halo-override.mp3",
           "title": "PANDÆMONIUM — HALO OVERRIDE",
-          "vibe": "campaign score"
+          "vibe": "industrial · cyber"
         },
         {
           "src": "assets/audio/dnd/pandaemonium-seraphim-asset.mp3",
           "title": "PANDÆMONIUM — SERAPHIM ASSET",
-          "vibe": "campaign score"
+          "vibe": "industrial · cyber"
         },
         {
           "src": "assets/audio/dnd/roll-her-north-my-lads.mp3",
@@ -101,6 +149,11 @@
           "src": "assets/audio/dnd/the-city-eats-the-city-feeds.mp3",
           "title": "THE CITY EATS, THE CITY FEEDS",
           "vibe": "campaign score"
+        },
+        {
+          "src": "assets/audio/dnd/the-deadmen-no-grave-found.mp3",
+          "title": "THE DEADMEN — NO GRAVE FOUND",
+          "vibe": "industrial · cyber"
         },
         {
           "src": "assets/audio/dnd/the-empty-chair-at-the-feast.mp3",
@@ -133,11 +186,6 @@
           "vibe": "campaign score"
         },
         {
-          "src": "assets/audio/dnd/the-slayer-the-sage-and-the-king.mp3",
-          "title": "The Slayer, The Sage, and The King",
-          "vibe": "epic · narrative"
-        },
-        {
           "src": "assets/audio/dnd/the-sovereign-and-his-shadows.mp3",
           "title": "The Sovereign and His Shadows",
           "vibe": "campaign score"
@@ -149,6 +197,11 @@
       "title": "Library of Ruina · Fan Works",
       "blurb": "Fan songs composed in tribute to Library of Ruina.",
       "tracks": [
+        {
+          "src": "assets/audio/ruina/the-weight-of-a-good-person.mp3",
+          "title": "The Weight of a Good Person",
+          "vibe": "cinematic"
+        },
         {
           "src": "assets/audio/ruina/a-crown-of-paper-stars-edit.mp3",
           "title": "A Crown of Paper Stars (Edit)",
@@ -193,11 +246,6 @@
           "src": "assets/audio/ruina/the-standard-deviation.mp3",
           "title": "The Standard Deviation",
           "vibe": "library of ruina"
-        },
-        {
-          "src": "assets/audio/ruina/the-weight-of-a-good-person.mp3",
-          "title": "The Weight of a Good Person",
-          "vibe": "cinematic"
         },
         {
           "src": "assets/audio/ruina/the-weight-of-eternity-hokma.mp3",

@@ -107,6 +107,27 @@
     $("p-time").textContent = fmt(audio.currentTime) + " / " + fmt(audio.duration);
   });
 
+  // ---- volume ----
+  const vol = $("p-vol"), mute = $("p-mute");
+  const savedVol = parseFloat(localStorage.getItem("mvol"));
+  audio.volume = isNaN(savedVol) ? 1 : Math.min(1, Math.max(0, savedVol));
+  if (vol) vol.value = audio.volume;
+  function volIcon() {
+    mute.textContent = (audio.muted || audio.volume === 0) ? "🔇" : audio.volume < 0.5 ? "🔉" : "🔊";
+  }
+  volIcon();
+  if (vol) vol.addEventListener("input", () => {
+    audio.muted = false;
+    audio.volume = parseFloat(vol.value);
+    localStorage.setItem("mvol", vol.value);
+    volIcon();
+  });
+  if (mute) mute.addEventListener("click", () => {
+    audio.muted = !audio.muted;
+    if (!audio.muted && audio.volume === 0) { audio.volume = 0.5; if (vol) vol.value = 0.5; }
+    volIcon();
+  });
+
   $("p-main").onclick = toggle;
   $("p-prev").onclick = () => play((cur - 1 + flat.length) % flat.length);
   $("p-next").onclick = () => play((cur + 1) % flat.length);
