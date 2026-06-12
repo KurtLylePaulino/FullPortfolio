@@ -7,6 +7,76 @@
   audio.preload = "metadata";
   let CATS = [], flat = [], cur = -1;
 
+  // ---- audio-reactive background (subtle; idles out when nothing plays) ----
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const vizCanvas = document.getElementById("viz");
+  const BARS = 48;
+  const smoothBars = new Float32Array(BARS);
+  let actx, analyser, freqData, graphReady = false, vizRAF = null;
+
+  function ensureGraph() {
+    if (graphReady || reduceMotion || !vizCanvas) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      actx = new AC();
+      const src = actx.createMediaElementSource(audio);
+      analyser = actx.createAnalyser();
+      analyser.fftSize = 256;
+      analyser.smoothingTimeConstant = 0.82;
+      src.connect(analyser);
+      analyser.connect(actx.destination);
+      freqData = new Uint8Array(analyser.frequencyBinCount);
+      graphReady = true;
+    } catch (e) { graphReady = false; }
+  }
+  function sizeViz() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    vizCanvas.width = Math.floor(vizCanvas.offsetWidth * dpr);
+    vizCanvas.height = Math.floor(vizCanvas.offsetHeight * dpr);
+  }
+  function vizFrame() {
+    const ctx = vizCanvas.getContext("2d");
+    const W = vizCanvas.width, H = vizCanvas.height;
+    ctx.clearRect(0, 0, W, H);
+    const playing = graphReady && !audio.paused;
+    if (playing) analyser.getByteFrequencyData(freqData);
+    const half = BARS >> 1;          // mirror the spectrum from the centre for balance
+    const bw = W / BARS;
+    let bass = 0;
+    for (let k = 0; k < half; k++) {
+      let v = 0;
+      if (playing) {
+        const idx = Math.floor(Math.pow(k / half, 1.7) * freqData.length * 0.6);
+        v = freqData[idx] / 255;
+        if (k < 5) bass += v;
+      }
+      smoothBars[k] += (v - smoothBars[k]) * (playing ? 0.35 : 0.08);
+      const h = smoothBars[k] * H * 0.5;
+      const grad = ctx.createLinearGradient(0, H, 0, H - h);
+      grad.addColorStop(0, "rgba(255,45,126,0)");
+      grad.addColorStop(0.55, "rgba(255,45,126,0.16)");
+      grad.addColorStop(1, "rgba(52,230,230,0.24)");
+      ctx.fillStyle = grad;
+      const lx = (half - 1 - k) * bw, rx = (half + k) * bw;   // low freqs centre, highs to the edges
+      ctx.fillRect(lx + bw * 0.2, H - h, bw * 0.6, h);
+      ctx.fillRect(rx + bw * 0.2, H - h, bw * 0.6, h);
+    }
+    document.documentElement.style.setProperty("--beat", (playing ? Math.min(1, bass / 5) : 0).toFixed(3));
+    let active = playing;
+    if (!active) for (let i = 0; i < BARS; i++) if (smoothBars[i] > 0.01) { active = true; break; }
+    vizCanvas.classList.toggle("on", active);
+    if (active) { vizRAF = requestAnimationFrame(vizFrame); }
+    else { vizRAF = null; document.documentElement.style.setProperty("--beat", "0"); }
+  }
+  function startViz() {
+    if (reduceMotion || !vizCanvas) return;
+    ensureGraph();
+    if (actx && actx.state === "suspended") actx.resume();
+    if (!vizRAF) { sizeViz(); vizFrame(); }
+  }
+  if (vizCanvas) window.addEventListener("resize", () => { if (!vizRAF) sizeViz(); });
+
   const $ = (id) => document.getElementById(id);
   const fmt = (s) => (isNaN(s) ? "0:00" : Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0"));
 
@@ -88,6 +158,7 @@
     $("player").classList.add("up");
     $("p-title").textContent = flat[i].title;
     $("p-vibe").textContent = flat[i].vibe;
+    startViz();
     mark();
   }
   function toggle() {
@@ -98,7 +169,7 @@
     listEl.querySelectorAll(".track").forEach((r) => r.classList.toggle("playing", +r.dataset.i === cur && !audio.paused));
     $("p-main").textContent = audio.paused ? "▶" : "❚❚";
   }
-  audio.addEventListener("play", mark);
+  audio.addEventListener("play", () => { startViz(); mark(); });
   audio.addEventListener("pause", mark);
   audio.addEventListener("ended", () => play((cur + 1) % flat.length));
   audio.addEventListener("timeupdate", () => {
