@@ -52,11 +52,11 @@
         if (k < 5) bass += v;
       }
       smoothBars[k] += (v - smoothBars[k]) * (playing ? 0.35 : 0.08);
-      const h = smoothBars[k] * H * 0.5;
+      const h = smoothBars[k] * H * 0.45;
       const grad = ctx.createLinearGradient(0, H, 0, H - h);
       grad.addColorStop(0, "rgba(255,45,126,0)");
-      grad.addColorStop(0.55, "rgba(255,45,126,0.16)");
-      grad.addColorStop(1, "rgba(52,230,230,0.24)");
+      grad.addColorStop(0.55, "rgba(255,45,126,0.14)");
+      grad.addColorStop(1, "rgba(52,230,230,0.21)");
       ctx.fillStyle = grad;
       const lx = (half - 1 - k) * bw, rx = (half + k) * bw;   // low freqs centre, highs to the edges
       ctx.fillRect(lx + bw * 0.2, H - h, bw * 0.6, h);
@@ -76,6 +76,9 @@
     if (!vizRAF) { sizeViz(); vizFrame(); }
   }
   if (vizCanvas) window.addEventListener("resize", () => { if (!vizRAF) sizeViz(); });
+  // insurance: any user gesture resumes a suspended AudioContext so audio is never left silent
+  ["pointerdown", "keydown", "touchstart"].forEach((ev) =>
+    window.addEventListener(ev, () => { if (actx && actx.state === "suspended") actx.resume(); }, { passive: true }));
 
   const $ = (id) => document.getElementById(id);
   const fmt = (s) => (isNaN(s) ? "0:00" : Math.floor(s / 60) + ":" + String(Math.floor(s % 60)).padStart(2, "0"));

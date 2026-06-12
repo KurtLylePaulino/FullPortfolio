@@ -20,7 +20,7 @@ body[data-theme="music"] {
 
 /* ---- ambient + audio-reactive background ---- */
 .bg-fx { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-.aurora { position: absolute; inset: -25%; }
+.aurora { position: absolute; inset: -25%; animation: aurora-hue 70s ease-in-out infinite; will-change: filter; }
 .aurora i { position: absolute; width: 48vw; height: 48vw; border-radius: 50%;
   filter: blur(85px); mix-blend-mode: screen; will-change: transform; }
 .aurora i:nth-child(1) { background: #ff2d7e; left: 56%; top: -8%;  opacity: .15; animation: drift1 30s ease-in-out infinite; }
@@ -29,16 +29,18 @@ body[data-theme="music"] {
 @keyframes drift1 { 0%,100% { transform: none; } 50% { transform: translate(-10vw, 12vh) scale(1.12); } }
 @keyframes drift2 { 0%,100% { transform: none; } 50% { transform: translate(12vw, -8vh) scale(1.15); } }
 @keyframes drift3 { 0%,100% { transform: none; } 50% { transform: translate(-8vw, -10vh) scale(1.1); } }
+/* super-gentle ambient colour drift across the whole aurora */
+@keyframes aurora-hue { 0%,100% { filter: hue-rotate(-14deg) saturate(1); } 50% { filter: hue-rotate(16deg) saturate(1.12); } }
 /* beat glow: opacity driven by JS via --beat (0..1) */
 .bg-fx::after { content: ""; position: absolute; inset: 0;
   background: radial-gradient(60% 45% at 50% 100%, rgba(255,45,126,.18), transparent 70%);
-  opacity: calc(var(--beat, 0) * .9); transition: opacity .12s linear; }
+  opacity: calc(var(--beat, 0) * .8); transition: opacity .12s linear; }
 #viz { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 46vh;
   opacity: 0; transition: opacity .7s var(--ease); }
 #viz.on { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
-  .aurora i { animation: none; }
+  .aurora, .aurora i { animation: none; }
   #viz, .bg-fx::after { display: none; }
 }
 body[data-theme="music"] h1, body[data-theme="music"] .world__title { font-family: var(--mono); font-weight: 700; }
