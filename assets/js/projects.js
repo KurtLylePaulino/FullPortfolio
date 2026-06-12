@@ -3,7 +3,7 @@
   "use strict";
   const mount = document.getElementById("proj-list");
   if (!mount) return;
-  const GLYPH = { game: "◆", ml: "⌗", web: "&lt;/&gt;" };
+  const GLYPH = { game: "◆", ml: "⌗", web: "&lt;/&gt;", tool: "▦" };
 
   fetch("assets/data/projects.json")
     .then((r) => r.json())
