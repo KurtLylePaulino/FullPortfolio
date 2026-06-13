@@ -12,7 +12,12 @@
       "tagline": "2D cybersecurity roguelike · Unity · Thesis",
       "blurb": "A 2D roguelike that teaches cybersecurity through play. Lead author on the award-winning paper; ran the numerical balancing across gameplay and database systems.",
       "summary": "Circuit Breakers is a 2D PC roguelike that turns cybersecurity concepts into roguelike runs. As lead author I owned the award-winning thesis and technical documentation, executed the numerical balancing for gameplay and the Firebase-backed database systems, and built functionality spanning UI, mechanics, and progression. It won Best Thesis, Best Paper, and Best Presenter.",
-      "stack": ["Unity", "C#", "Firebase", "Firestore"],
+      "stack": [
+        "Unity",
+        "C#",
+        "Firebase",
+        "Firestore"
+      ],
       "highlights": [
         "Lead author on the award-winning thesis & technical documentation",
         "Numerical balancing across gameplay and database systems",
@@ -20,76 +25,35 @@
         "Firebase auth, stats, and achievements integration"
       ],
       "metrics": [
-        { "label": "Awards", "value": "3×" },
-        { "label": "Engine", "value": "Unity" },
-        { "label": "Role", "value": "Lead author" }
+        {
+          "label": "Awards",
+          "value": "3×"
+        },
+        {
+          "label": "Engine",
+          "value": "Unity"
+        },
+        {
+          "label": "Role",
+          "value": "Lead author"
+        }
       ],
       "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/circuit-breakers.webp",
       "demo": null,
       "links": [
-        { "label": "Download build (Windows)", "href": "https://drive.google.com/drive/folders/1MR4GVBB7N-VR-IjFD2au542m6tY4nwLT?usp=sharing", "kind": "primary" },
-        { "label": "Read the thesis", "href": "https://kurtlylepaulino.github.io/FullPortfolio/assets/docs/IMRAD_FinalManuscript_CircuitBreakers.pdf" },
-        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
-      ]
-    },
-    {
-      "id": "fightmap-generator",
-      "title": "Fightmap Generator",
-      "category": "tool",
-      "year": "2026",
-      "featured": true,
-      "award": null,
-      "tagline": "Procedural battle-map generator · Python · CLI + GUI",
-      "blurb": "A dependency-light procedural generator for top-down tabletop battle maps — six layout types across three themes, rendered to PNG with seeded, reproducible output. Ships with both a CLI and a one-click desktop app.",
-      "summary": "Fightmap Generator is a procedural (not AI/ML) battle-map generator written in Python. A map is a 2D grid of tile types produced by plain algorithms — room placement, corridor carving, and seeded value-noise scatter — then rendered in layers: noise-textured ground, raised objects with drop-shadows, warm light glow, and a fog/vignette mood pass. Six layout archetypes (settlement, arena, dungeon, tomb, forest, wildlands) each render under any of three data-driven themes for 18 combinations, and a flood-fill connectivity guarantee ensures no walkable area is ever stranded. A single numpy Generator is threaded through both generation and rendering, so the same seed reproduces byte-identical output. It runs as a CLI or a tkinter desktop app (packageable into a standalone Windows .exe), backed by a pytest suite covering tile/theme integrity, connectivity, noise determinism, reproducibility, the full type×theme matrix, and the CLI.",
-      "stack": ["Python", "Pillow", "NumPy", "tkinter", "pytest"],
-      "highlights": [
-        "Six layout types × three themes (18 combinations) from pure algorithms — no AI/ML",
-        "Seeded numpy RNG threaded through generation and rendering: same seed = byte-identical map",
-        "Layered renderer: noise-textured ground, raised objects with drop-shadows, light glow, fog/vignette",
-        "Flood-fill connectivity guarantee — no walkable region is ever stranded",
-        "CLI + tkinter desktop GUI, packageable to a standalone Windows .exe"
-      ],
-      "metrics": [
-        { "label": "Map types", "value": "6" },
-        { "label": "Combos", "value": "18" },
-        { "label": "Interface", "value": "CLI + GUI" }
-      ],
-      "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/fightmap-generator.webp",
-      "demo": null,
-      "links": [
-        { "label": "View on GitHub", "href": "https://github.com/KurtLylePaulino/MapGenConcept", "kind": "primary" },
-        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
-      ]
-    },
-    {
-      "id": "melanoma-cnn",
-      "title": "Melanoma Skin Cancer Detection",
-      "category": "ml",
-      "year": "2025",
-      "featured": true,
-      "award": null,
-      "tagline": "Convolutional neural network · Capstone",
-      "blurb": "A CNN that classifies dermoscopic images as benign or malignant at 90%+ accuracy, with experiments comparing optimizers and activation functions.",
-      "summary": "A convolutional neural network built in TensorFlow/Keras that classifies dermoscopic images as benign or malignant at over 90% accuracy. I engineered and ran several experimental iterations — comparing optimizers and activation functions — to identify the most stable convergence patterns, all documented in the notebook. The shared Drive folder bundles the trained model, saved checkpoints, the dataset, and the base notebooks.",
-      "stack": ["Python", "TensorFlow", "Keras", "NumPy", "Matplotlib"],
-      "highlights": [
-        "90%+ classification accuracy on benign vs. malignant",
-        "Comparative experiments across optimizers and activation functions",
-        "Convergence-stability analysis to pick the strongest configuration",
-        "Reproducible notebook + saved model checkpoints"
-      ],
-      "metrics": [
-        { "label": "Accuracy", "value": "90%+" },
-        { "label": "Task", "value": "Binary classification" },
-        { "label": "Framework", "value": "TF/Keras" }
-      ],
-      "media": null,
-      "demo": null,
-      "links": [
-        { "label": "Models + dataset", "href": "https://drive.google.com/drive/folders/13oZi_EPwOwdQE_8IwyITkMBv0eWrohD7?usp=drive_link", "kind": "primary" },
-        { "label": "Download notebook", "href": "https://kurtlylepaulino.github.io/FullPortfolio/assets/docs/melanoma_model.ipynb" },
-        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+        {
+          "label": "Download build (Windows)",
+          "href": "https://drive.google.com/drive/folders/1MR4GVBB7N-VR-IjFD2au542m6tY4nwLT?usp=sharing",
+          "kind": "primary"
+        },
+        {
+          "label": "Read the thesis",
+          "href": "https://kurtlylepaulino.github.io/FullPortfolio/assets/docs/IMRAD_FinalManuscript_CircuitBreakers.pdf"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/KurtLylePaulino"
+        }
       ]
     },
     {
@@ -99,26 +63,49 @@
       "year": "2025",
       "featured": false,
       "award": null,
-      "tagline": "Static site · one classical haiku per day",
-      "blurb": "A washi-paper site serving one public-domain haiku per day, with drifting sakura petals and an optional generative koto soundscape (Web Audio).",
-      "summary": "A zero-dependency static site that surfaces one public-domain haiku per day from the classical masters — Bashō, Issa, Buson — chosen deterministically from the calendar date. Features drifting sakura petals, a copy button, keyboard controls, and an optional generative koto soundscape synthesized live with the Web Audio API. No build step, no framework.",
-      "stack": ["HTML", "CSS", "Vanilla JS", "Web Audio API", "GitHub Pages"],
+      "tagline": "Static site · one classical haiku per day · living sumi-e scene",
+      "blurb": "A living sumi-e night scene that surfaces one public-domain haiku per day — brush-written line by line, with parallax Mt Fuji, fireflies, drifting petals, and a koto soundscape.",
+      "summary": "A zero-dependency static site that surfaces one public-domain haiku per day from the classical masters — Bashō, Issa, Buson, Chiyo-ni — chosen deterministically from the calendar date. It opens with a shoji-screen intro (the title brush-writes on, a seal stamps down) over a living sumi-e night scene: parallax Mt Fuji, a glowing moon, drifting clouds and mist, falling sakura petals, fireflies, and swaying paper lanterns, with each haiku brush-written line by line. Audio unlocks on first interaction — a looping koto track (‘Moonlit Koto Garden’) with a synthesized koto/shakuhachi fallback, plus quiet synth UI effects (entry bell, bamboo shishi-odoshi clack, brush ticks, seal thunk) that are ducked, rate-limited, and remembered. Keyboard controls and a prefers-reduced-motion fallback. No build step, no dependencies.",
+      "stack": [
+        "HTML",
+        "CSS",
+        "Vanilla JS",
+        "Web Audio API",
+        "GitHub Pages"
+      ],
       "highlights": [
-        "Deterministic daily selection from the calendar date",
-        "Generative koto soundscape via the Web Audio API",
-        "Drifting sakura particle system in vanilla JS",
-        "No build step, no dependencies"
+        "Deterministic daily haiku chosen from the calendar date",
+        "Living sumi-e scene: parallax Mt Fuji, fireflies, petals, lanterns",
+        "Looping koto track with a synthesized koto/shakuhachi fallback",
+        "Shoji-screen intro + character-by-character brush calligraphy",
+        "Keyboard controls + prefers-reduced-motion fallback"
       ],
       "metrics": [
-        { "label": "Deps", "value": "0" },
-        { "label": "Build", "value": "None" },
-        { "label": "Audio", "value": "Web Audio" }
+        {
+          "label": "Deps",
+          "value": "0"
+        },
+        {
+          "label": "Build",
+          "value": "None"
+        },
+        {
+          "label": "Audio",
+          "value": "Web Audio"
+        }
       ],
       "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/haiku-daily.webp",
       "demo": "https://kurtlylepaulino.github.io/FullPortfolio/projects/haiku-daily/index.html",
       "links": [
-        { "label": "Live demo", "href": "https://kurtlylepaulino.github.io/FullPortfolio/projects/haiku-daily/index.html", "kind": "primary" },
-        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+        {
+          "label": "Live demo",
+          "href": "https://kurtlylepaulino.github.io/FullPortfolio/projects/haiku-daily/index.html",
+          "kind": "primary"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/KurtLylePaulino"
+        }
       ]
     },
     {
@@ -131,7 +118,13 @@
       "tagline": "Static site · 200 attributed Chinese proverbs · living wuxia scene",
       "blurb": "A living wuxia/murim silk-scroll that rolls a random Chinese proverb from 200 classics — with animated scenery, looping music, a synthesized Web Audio soundscape, and brush-on-screen calligraphy.",
       "summary": "A single-page static site staged as a living wuxia/murim scene — a hanging silk scroll on aged rice paper, swaying red lanterns, parallax mountains with a distant pagoda, a breathing moon, and falling plum-blossom petals. It rolls a random proverb from 200 classics across 79 sources (Confucius, Laozi, Sun Tzu, Li Bai, the Water Margin, and more) with original text, pinyin, English, and full attribution. Each draw slashes a glint across the paper, brush-writes the proverb character by character, and stamps an index seal. A click-to-enter gate unlocks audio: a looping erhu-style track ('Silent Bamboo Path', lazy-loaded) plus a fully synthesized Web Audio soundscape — temple bell, fortune-stick rattle, sword glint, brush ticks, and seal thunk — all generated live, rate-limited, and ducked beneath the music. No build step, no dependencies.",
-      "stack": ["HTML", "CSS", "Vanilla JS", "Web Audio API", "GitHub Pages"],
+      "stack": [
+        "HTML",
+        "CSS",
+        "Vanilla JS",
+        "Web Audio API",
+        "GitHub Pages"
+      ],
       "highlights": [
         "200 attributed proverbs across 79 sources",
         "Looping music + fully synthesized Web Audio soundscape (no sound files)",
@@ -140,15 +133,86 @@
         "Keyboard controls + prefers-reduced-motion fallback"
       ],
       "metrics": [
-        { "label": "Proverbs", "value": "200" },
-        { "label": "Sources", "value": "79" },
-        { "label": "Audio", "value": "Web Audio" }
+        {
+          "label": "Proverbs",
+          "value": "200"
+        },
+        {
+          "label": "Sources",
+          "value": "79"
+        },
+        {
+          "label": "Audio",
+          "value": "Web Audio"
+        }
       ],
       "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/jianghu-proverbs.webp",
       "demo": "https://kurtlylepaulino.github.io/FullPortfolio/projects/jianghu-proverbs/index.html",
       "links": [
-        { "label": "Live demo", "href": "https://kurtlylepaulino.github.io/FullPortfolio/projects/jianghu-proverbs/index.html", "kind": "primary" },
-        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+        {
+          "label": "Live demo",
+          "href": "https://kurtlylepaulino.github.io/FullPortfolio/projects/jianghu-proverbs/index.html",
+          "kind": "primary"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/KurtLylePaulino"
+        }
+      ]
+    },
+    {
+      "id": "melanoma-cnn",
+      "title": "Melanoma Skin Cancer Detection",
+      "category": "ml",
+      "year": "2025",
+      "featured": true,
+      "award": null,
+      "tagline": "Convolutional neural network · Capstone",
+      "blurb": "A CNN that classifies dermoscopic images as benign or malignant at 90%+ accuracy, with experiments comparing optimizers and activation functions.",
+      "summary": "A convolutional neural network built in TensorFlow/Keras that classifies dermoscopic images as benign or malignant at over 90% accuracy. I engineered and ran several experimental iterations — comparing optimizers and activation functions — to identify the most stable convergence patterns, all documented in the notebook. The shared Drive folder bundles the trained model, saved checkpoints, the dataset, and the base notebooks.",
+      "stack": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "highlights": [
+        "90%+ classification accuracy on benign vs. malignant",
+        "Comparative experiments across optimizers and activation functions",
+        "Convergence-stability analysis to pick the strongest configuration",
+        "Reproducible notebook + saved model checkpoints"
+      ],
+      "metrics": [
+        {
+          "label": "Accuracy",
+          "value": "90%+"
+        },
+        {
+          "label": "Task",
+          "value": "Binary classification"
+        },
+        {
+          "label": "Framework",
+          "value": "TF/Keras"
+        }
+      ],
+      "media": null,
+      "demo": null,
+      "links": [
+        {
+          "label": "Models + dataset",
+          "href": "https://drive.google.com/drive/folders/13oZi_EPwOwdQE_8IwyITkMBv0eWrohD7?usp=drive_link",
+          "kind": "primary"
+        },
+        {
+          "label": "Download notebook",
+          "href": "https://kurtlylepaulino.github.io/FullPortfolio/assets/docs/melanoma_model.ipynb"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/KurtLylePaulino"
+        }
       ]
     },
     {
@@ -161,7 +225,12 @@
       "tagline": "Multi-role web app · CRUD",
       "blurb": "A library platform tracking books, users, and activity across Admin, Librarian, and Borrower roles, with activity logging and transaction records.",
       "summary": "A web platform that tracks books, users, and activity across three roles — Admin, Librarian, and Borrower. I built the CRUD systems, user-activity logging, and transaction records, and designed the interactions and feedback flows between all three user types.",
-      "stack": ["HTML", "CSS", "JavaScript", "CRUD"],
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "CRUD"
+      ],
       "highlights": [
         "Three role types: Admin, Librarian, Borrower",
         "Full CRUD for books and users",
@@ -169,13 +238,22 @@
         "Cross-role interaction and feedback flows"
       ],
       "metrics": [
-        { "label": "Roles", "value": "3" },
-        { "label": "Domain", "value": "CRUD" }
+        {
+          "label": "Roles",
+          "value": "3"
+        },
+        {
+          "label": "Domain",
+          "value": "CRUD"
+        }
       ],
       "media": null,
       "demo": null,
       "links": [
-        { "label": "GitHub", "href": "https://github.com/KurtLylePaulino" }
+        {
+          "label": "GitHub",
+          "href": "https://github.com/KurtLylePaulino"
+        }
       ]
     }
   ]

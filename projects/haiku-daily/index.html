@@ -4,42 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>俳句 · Haiku Daily</title>
-  <meta name="description" content="A philosophical haiku from the classical Japanese masters each day — Bashō, Issa, Buson and others. Reroll for another, copy it, and let the koto play." />
+  <meta name="description" content="A philosophical haiku from the classical Japanese masters each day — Bashō, Issa, Buson and others. A living sumi-e night scene; reroll, copy, and let the koto play." />
+  <meta name="theme-color" content="#0d1326" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;700&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;600;700&family=Yuji+Syuku&family=Zen+Maru+Gothic:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- decorative layers -->
-  <div class="grain" aria-hidden="true"></div>
-  <div class="sun" aria-hidden="true"></div>
-  <div class="petals" id="petals" aria-hidden="true"></div>
+  <!-- ===================== LIVING BACKGROUND SCENE ===================== -->
+  <div class="scene" aria-hidden="true">
+    <div class="sky"></div>
+    <div class="stars"></div>
+    <div class="moon"></div>
+    <div class="cloud cloud-1"></div>
+    <div class="cloud cloud-2"></div>
+    <div class="cloud cloud-3"></div>
+    <div class="cloud cloud-4"></div>
+    <div class="cloud cloud-5"></div>
+
+    <!-- parallax mountain layers -->
+    <svg class="range range-far" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice">
+      <path d="M0,320 L0,232 C150,200 300,196 470,214 C640,232 740,262 900,248 C1060,234 1210,196 1440,224 L1440,320 Z"/>
+    </svg>
+    <svg class="range range-mid" viewBox="0 0 1440 360" preserveAspectRatio="xMidYMax slice">
+      <!-- generic rolling mountain range -->
+      <path d="M0,360 L0,252 C120,214 210,166 320,156 C432,146 470,212 560,222 C662,233 720,156 840,146 C962,136 1010,206 1130,214 C1252,222 1330,174 1440,154 L1440,360 Z"/>
+    </svg>
+    <svg class="range range-near" viewBox="0 0 1440 240" preserveAspectRatio="xMidYMax slice">
+      <path d="M0,240 L0,150 C120,120 220,160 360,150 C520,138 600,90 760,120 C900,146 1010,180 1180,150 C1300,128 1380,150 1440,140 L1440,240 Z"/>
+    </svg>
+
+    <div class="mist"></div>
+
+    <!-- sakura-branch corner ornaments -->
+    <svg class="defs" width="0" height="0" aria-hidden="true">
+      <defs>
+        <g id="sakuraBlossom" fill="#e7b2c6">
+          <circle cx="0" cy="-6.5" r="4.3"/><circle cx="6.2" cy="-2" r="4.3"/>
+          <circle cx="3.8" cy="5.3" r="4.3"/><circle cx="-3.8" cy="5.3" r="4.3"/>
+          <circle cx="-6.2" cy="-2" r="4.3"/><circle cx="0" cy="0" r="2.1" fill="#cc9f57"/>
+        </g>
+      </defs>
+    </svg>
+    <svg class="branch branch-tl" viewBox="0 0 300 200" aria-hidden="true">
+      <g class="twigs">
+        <path d="M-8,-12 C70,24 112,58 152,76 C178,88 206,94 240,96"/>
+        <path d="M82,36 C96,54 104,72 108,98"/>
+        <path d="M152,76 C176,74 192,62 212,50"/>
+      </g>
+      <use href="#sakuraBlossom" transform="translate(240,96) scale(1.15)"/>
+      <use href="#sakuraBlossom" transform="translate(108,99) scale(1)"/>
+      <use href="#sakuraBlossom" transform="translate(212,49) scale(0.95)"/>
+      <use href="#sakuraBlossom" transform="translate(168,82) scale(0.85)"/>
+      <use href="#sakuraBlossom" transform="translate(64,20) scale(0.8)"/>
+    </svg>
+    <svg class="branch branch-tr" viewBox="0 0 300 200" aria-hidden="true">
+      <g class="twigs">
+        <path d="M-8,-12 C70,24 112,58 152,76 C178,88 206,94 240,96"/>
+        <path d="M82,36 C96,54 104,72 108,98"/>
+        <path d="M152,76 C176,74 192,62 212,50"/>
+      </g>
+      <use href="#sakuraBlossom" transform="translate(240,96) scale(1.15)"/>
+      <use href="#sakuraBlossom" transform="translate(108,99) scale(1)"/>
+      <use href="#sakuraBlossom" transform="translate(212,49) scale(0.95)"/>
+      <use href="#sakuraBlossom" transform="translate(168,82) scale(0.85)"/>
+      <use href="#sakuraBlossom" transform="translate(64,20) scale(0.8)"/>
+    </svg>
+
+    <!-- particle canvas: floating sky-lanterns, fireflies + sakura petals -->
+    <canvas class="particles" id="particles"></canvas>
+  </div>
+
+  <!-- ===================== INTRO: SHOJI SCREENS ===================== -->
+  <div class="intro" id="intro">
+    <div class="shoji shoji-left"></div>
+    <div class="shoji shoji-right"></div>
+  </div>
 
   <!-- vertical brand strip -->
   <div class="vbrand" aria-hidden="true">日々の俳句</div>
 
+  <!-- ===================== MAIN CARD ===================== -->
   <main class="scroll" id="scroll">
+    <div class="seal" id="seal" title="Haiku Daily" aria-hidden="true"><span>俳</span></div>
+
     <header class="masthead">
-      <span class="brand-jp">俳句</span>
+      <span class="brand-jp" id="brandJp">俳句</span>
       <span class="brand-en">Haiku Daily</span>
     </header>
 
     <p class="date" id="dateLabel"></p>
 
-    <section class="haiku-block">
+    <section class="haiku-block" id="haikuBlock">
       <span class="theme-kanji" id="themeKanji" aria-hidden="true">静</span>
       <blockquote class="haiku" id="haiku" aria-live="polite">
         <span class="line">The old pond—</span>
         <span class="line">a frog leaps in:</span>
         <span class="line">the sound of water</span>
       </blockquote>
+      <span class="ink-sweep" id="inkSweep" aria-hidden="true"></span>
       <p class="jp" id="jp" lang="ja">古池や蛙飛び込む水の音</p>
       <p class="byline" id="byline">— Matsuo Bashō · 1644–1694</p>
       <p class="theme-label" id="themeLabel">stillness · the eternal now</p>
     </section>
-
-    <div class="seal" id="seal" title="Haiku Daily"><span>俳</span></div>
 
     <div class="controls">
       <button id="rerollBtn" class="btn btn-primary" type="button">
@@ -48,8 +116,17 @@
       <button id="copyBtn" class="btn btn-ghost" type="button">
         <span class="ico" aria-hidden="true">⧉</span><span class="lbl">Copy</span>
       </button>
-      <button id="soundBtn" class="btn btn-ghost" type="button" aria-pressed="false">
-        <span class="ico" aria-hidden="true">♪</span><span class="lbl">Koto off</span>
+      <button id="musicBtn" class="btn btn-toggle" type="button" aria-pressed="false" title="Background music">
+        <span class="ico" aria-hidden="true">♪</span><span class="lbl">Music</span>
+      </button>
+      <label class="vol" id="volWrap" title="Music volume">
+        <span class="ico" aria-hidden="true">🔊</span>
+        <input id="volSlider" type="range" min="0" max="100" value="40"
+               aria-label="Music volume" />
+        <span class="vol-val" id="volVal">40%</span>
+      </label>
+      <button id="sfxBtn" class="btn btn-toggle" type="button" aria-pressed="true" title="UI sound effects">
+        <span class="ico" aria-hidden="true">🔔</span><span class="lbl">Sound</span>
       </button>
     </div>
 
@@ -61,6 +138,7 @@
     <div class="seigaiha" aria-hidden="true"></div>
   </main>
 
+  <div class="ripples" id="ripples" aria-hidden="true"></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="haikus.js"></script>
