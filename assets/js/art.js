@@ -7,7 +7,7 @@
   let DATA = {};
   let flat = [];        // serious work (lightbox list A)
   let memesFlat = [];   // casual collection (lightbox list B)
-  const order = ["motion", "artwork", "vivi", "yuria"];   // memes intentionally excluded here
+  const order = ["motion", "artwork", "vivi", "yuria", "maps"];   // memes intentionally excluded here
 
   fetch("assets/data/art.json")
     .then((r) => r.json())
@@ -40,7 +40,7 @@
         const gi = flat.length; flat.push({ item: it });
         cells += cellHTML(it, gi, isVideo, `${g.title} ${i + 1}`);
       });
-      const noun = isVideo ? "clips" : "pieces";
+      const noun = isVideo ? "clips" : (k === "maps" ? "maps" : "pieces");
       html += `<section class="group" data-group="${k}">
         <div class="group__head"><h2>${g.title}</h2><span class="group__count">${g.items.length} ${noun}</span><span class="group__line"></span></div>
         <div class="gallery${isVideo ? " gallery--video" : ""}">${cells}</div></section>`;

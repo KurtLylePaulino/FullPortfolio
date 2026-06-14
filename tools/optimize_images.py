@@ -23,22 +23,26 @@ GROUPS = {
     "artwork": ("ARTWORK", "Artwork"),
     "vivi":    ("CHARACTER CONSISTENCY SHOWCASE/Vivi", "Vivi"),
     "yuria":   ("CHARACTER CONSISTENCY SHOWCASE/Yuria", "Yuria"),
+    "maps":    ("DND MAPS", "Maps & Battlemaps"),
     "memes":   ("Memes", "Memes"),
 }
+
+# groups that benefit from a larger full-size in the lightbox (map detail)
+FULL_MAX_OVERRIDE = {"maps": 2000}
 
 FULL_MAX = 1600      # long edge, px
 THUMB_MAX = 640      # long edge, px
 FULL_Q = 82
 THUMB_Q = 78
 
-def convert(src_path: Path, full_path: Path, thumb_path: Path):
+def convert(src_path: Path, full_path: Path, thumb_path: Path, full_max: int = FULL_MAX):
     with Image.open(src_path) as im:
         im = ImageOps.exif_transpose(im)
         if im.mode in ("RGBA", "P", "LA"):
             im = im.convert("RGB")
         w, h = im.size
         full = im.copy()
-        full.thumbnail((FULL_MAX, FULL_MAX), Image.LANCZOS)
+        full.thumbnail((full_max, full_max), Image.LANCZOS)
         full.save(full_path, "WEBP", quality=FULL_Q, method=6)
         thumb = im.copy()
         thumb.thumbnail((THUMB_MAX, THUMB_MAX), Image.LANCZOS)
@@ -63,7 +67,7 @@ def main():
             full_path = out_dir / f"{stem}.webp"
             thumb_path = out_dir / f"{stem}-thumb.webp"
             try:
-                w, h = convert(src, full_path, thumb_path)
+                w, h = convert(src, full_path, thumb_path, FULL_MAX_OVERRIDE.get(key, FULL_MAX))
             except Exception as e:
                 print(f"!! failed {src.name}: {e}", file=sys.stderr)
                 continue

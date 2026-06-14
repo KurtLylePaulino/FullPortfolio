@@ -260,6 +260,161 @@
       }
     ]
   },
+  "maps": {
+    "title": "Maps & Battlemaps",
+    "items": [
+      {
+        "full": "assets/img/art/maps/maps-01.webp",
+        "thumb": "assets/img/art/maps/maps-01-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-02.webp",
+        "thumb": "assets/img/art/maps/maps-02-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-03.webp",
+        "thumb": "assets/img/art/maps/maps-03-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-04.webp",
+        "thumb": "assets/img/art/maps/maps-04-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-05.webp",
+        "thumb": "assets/img/art/maps/maps-05-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-06.webp",
+        "thumb": "assets/img/art/maps/maps-06-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-07.webp",
+        "thumb": "assets/img/art/maps/maps-07-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-08.webp",
+        "thumb": "assets/img/art/maps/maps-08-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-09.webp",
+        "thumb": "assets/img/art/maps/maps-09-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-10.webp",
+        "thumb": "assets/img/art/maps/maps-10-thumb.webp",
+        "w": 1536,
+        "h": 1024
+      },
+      {
+        "full": "assets/img/art/maps/maps-11.webp",
+        "thumb": "assets/img/art/maps/maps-11-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-12.webp",
+        "thumb": "assets/img/art/maps/maps-12-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-13.webp",
+        "thumb": "assets/img/art/maps/maps-13-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-14.webp",
+        "thumb": "assets/img/art/maps/maps-14-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-15.webp",
+        "thumb": "assets/img/art/maps/maps-15-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-16.webp",
+        "thumb": "assets/img/art/maps/maps-16-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-17.webp",
+        "thumb": "assets/img/art/maps/maps-17-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-18.webp",
+        "thumb": "assets/img/art/maps/maps-18-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-19.webp",
+        "thumb": "assets/img/art/maps/maps-19-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-20.webp",
+        "thumb": "assets/img/art/maps/maps-20-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-21.webp",
+        "thumb": "assets/img/art/maps/maps-21-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-22.webp",
+        "thumb": "assets/img/art/maps/maps-22-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-23.webp",
+        "thumb": "assets/img/art/maps/maps-23-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-24.webp",
+        "thumb": "assets/img/art/maps/maps-24-thumb.webp",
+        "w": 2688,
+        "h": 1520
+      },
+      {
+        "full": "assets/img/art/maps/maps-25.webp",
+        "thumb": "assets/img/art/maps/maps-25-thumb.webp",
+        "w": 1672,
+        "h": 941
+      }
+    ]
+  },
   "memes": {
     "title": "Memes",
     "items": [
