@@ -70,5 +70,15 @@ body[data-theme="art"] {
 .lb__nav.prev { left: 0; } .lb__nav.next { right: 0; }
 .lb__close { position: absolute; top: 1.2rem; right: 1.4rem; }
 .lb__play.active { background: var(--accent); color: var(--accent-ink); }
+#lb-vid { background: #000; }
+
+/* motion clips — flow in the same masonry, no cropping */
+.gallery .cell--video { background: #000; }
+.gallery .cell--video video { width: 100%; height: auto; display: block; transition: transform .6s var(--ease); }
+.gallery .cell--video:hover video { transform: scale(1.04); }
+.cell__play { position: absolute; bottom: .55rem; left: .6rem; z-index: 2; pointer-events: none;
+  font-family: var(--mono); font-size: .6rem; letter-spacing: .12em; text-transform: uppercase;
+  color: #fff; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.3);
+  border-radius: 5px; padding: .14rem .5rem; }
 
 @media (max-width: 640px) { .gallery { columns: 2 150px; } }

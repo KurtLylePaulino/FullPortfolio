@@ -366,5 +366,31 @@
         "h": 1520
       }
     ]
+  },
+  "motion": {
+    "title": "Motion",
+    "type": "video",
+    "items": [
+      {
+        "video": "assets/video/art/Showcase_1.mp4",
+        "title": "Showcase 1"
+      },
+      {
+        "video": "assets/video/art/Showcase_2.mp4",
+        "title": "Showcase 2"
+      },
+      {
+        "video": "assets/video/art/Showcase_3.mp4",
+        "title": "Showcase 3"
+      },
+      {
+        "video": "assets/video/art/Showcase_4.mp4",
+        "title": "Showcase 4"
+      },
+      {
+        "video": "assets/video/art/Showcase_5.mp4",
+        "title": "Showcase 5"
+      }
+    ]
   }
 }
