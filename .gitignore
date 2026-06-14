@@ -15,3 +15,5 @@ __pycache__/
 *.exe
 *.keras
 *.mp4
+# ...except the small web-optimized showcase clips that the Art gallery serves
+!assets/video/art/*.mp4
