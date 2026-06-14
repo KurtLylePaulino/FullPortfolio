@@ -1,24 +1,35 @@
-/* Art gallery: load manifest, render grouped masonry (images + motion clips), lightbox */
+/* Art gallery: grouped masonry (images + motion clips) + isolated, disclaimer-gated meme vault */
 (function () {
   "use strict";
-  const groupsEl = document.getElementById("groups");
-  const filtersEl = document.getElementById("filters");
+  const $ = (id) => document.getElementById(id);
+  const groupsEl = $("groups");
+  const filtersEl = $("filters");
   let DATA = {};
-  let flat = [];   // [{group, item}]
-  const order = ["motion", "artwork", "vivi", "yuria", "memes"];
+  let flat = [];        // serious work (lightbox list A)
+  let memesFlat = [];   // casual collection (lightbox list B)
+  const order = ["motion", "artwork", "vivi", "yuria"];   // memes intentionally excluded here
 
   fetch("assets/data/art.json")
     .then((r) => r.json())
     .then((d) => { DATA = d; render(); })
     .catch(() => { groupsEl.innerHTML = '<p style="color:var(--ink-faint)">Gallery failed to load.</p>'; });
 
+  function cellHTML(it, gi, isVideo, label) {
+    if (isVideo) {
+      return `<div class="cell cell--video" data-i="${gi}">
+        <video data-src="${it.video}" muted loop playsinline preload="none" aria-label="${label}"></video>
+        <span class="cell__play">▶ clip</span></div>`;
+    }
+    return `<div class="cell" data-i="${gi}"><img src="${it.thumb}" alt="${label}" loading="lazy" width="${it.w}" height="${it.h}"></div>`;
+  }
+
   function render() {
-    // filters
+    // filters (serious groups only)
     let fbtns = '<button class="filter active" data-f="all">All</button>';
     order.forEach((k) => { if (DATA[k]) fbtns += `<button class="filter" data-f="${k}">${DATA[k].title} <b>${DATA[k].items.length}</b></button>`; });
     filtersEl.innerHTML = fbtns;
 
-    // groups
+    // serious groups
     let html = "";
     flat = [];
     order.forEach((k) => {
@@ -26,15 +37,8 @@
       const isVideo = g.type === "video";
       let cells = "";
       g.items.forEach((it, i) => {
-        const gi = flat.length;
-        flat.push({ group: k, item: it });
-        if (isVideo) {
-          cells += `<div class="cell cell--video" data-i="${gi}">
-            <video data-src="${it.video}" muted loop playsinline preload="none" aria-label="${it.title || g.title + " " + (i + 1)}"></video>
-            <span class="cell__play">▶ clip</span></div>`;
-        } else {
-          cells += `<div class="cell" data-i="${gi}"><img src="${it.thumb}" alt="${g.title} ${i + 1}" loading="lazy" width="${it.w}" height="${it.h}"></div>`;
-        }
+        const gi = flat.length; flat.push({ item: it });
+        cells += cellHTML(it, gi, isVideo, `${g.title} ${i + 1}`);
       });
       const noun = isVideo ? "clips" : "pieces";
       html += `<section class="group" data-group="${k}">
@@ -42,8 +46,26 @@
         <div class="gallery${isVideo ? " gallery--video" : ""}">${cells}</div></section>`;
     });
     groupsEl.innerHTML = html;
-
     wireVideoTiles();
+
+    // casual collection (memes) — rendered into a hidden, gated section
+    const memes = DATA.memes;
+    if (memes) {
+      memesFlat = [];
+      let cells = "";
+      memes.items.forEach((it, i) => {
+        memesFlat.push({ item: it });
+        cells += cellHTML(it, i, false, `Casual ${i + 1}`);
+      });
+      const grid = $("meme-grid");
+      if (grid) grid.innerHTML = cells;
+      const cnt = $("meme-count");
+      if (cnt) cnt.textContent = memes.items.length + " pieces";
+      $("meme-grid").addEventListener("click", (e) => {
+        const c = e.target.closest(".cell"); if (!c) return;
+        openLB(memesFlat, +c.dataset.i);
+      });
+    }
 
     filtersEl.addEventListener("click", (e) => {
       const b = e.target.closest(".filter"); if (!b) return;
@@ -57,8 +79,10 @@
 
     groupsEl.addEventListener("click", (e) => {
       const c = e.target.closest(".cell"); if (!c) return;
-      openLB(+c.dataset.i);
+      openLB(flat, +c.dataset.i);
     });
+
+    wireMemeVault();
   }
 
   // lazy-load grid clips; play while visible, pause when off-screen
@@ -72,51 +96,62 @@
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         const v = e.target;
-        if (e.isIntersecting) {
-          if (!v.src) v.src = v.dataset.src;
-          v.play().catch(() => {});
-        } else {
-          v.pause();
-        }
+        if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); }
+        else v.pause();
       });
     }, { rootMargin: "100px 0px", threshold: 0.25 });
     vids.forEach((v) => io.observe(v));
   }
 
-  // ---- lightbox ----
-  const lb = document.getElementById("lb");
-  const lbImg = document.getElementById("lb-img");
-  const lbVid = document.getElementById("lb-vid");
-  const lbCount = document.getElementById("lb-count");
-  let cur = 0, timer = null;
+  // ---- meme vault: disclaimer gate ----
+  function wireMemeVault() {
+    const openBtn = $("meme-open"), modal = $("meme-modal"), reveal = $("meme-reveal");
+    if (!openBtn || !modal || !reveal) return;
+    let entered = false;
+    const showModal = () => { modal.classList.add("open"); document.body.style.overflow = "hidden"; };
+    const hideModal = () => { modal.classList.remove("open"); document.body.style.overflow = ""; };
+    openBtn.addEventListener("click", () => {
+      if (entered) { reveal.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+      showModal();
+    });
+    $("meme-enter").addEventListener("click", () => {
+      entered = true; hideModal(); reveal.hidden = false;
+      openBtn.textContent = "Jump to the casual collection";
+      requestAnimationFrame(() => reveal.scrollIntoView({ behavior: "smooth", block: "start" }));
+    });
+    $("meme-cancel").addEventListener("click", hideModal);
+    modal.addEventListener("click", (e) => { if (e.target === modal) hideModal(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("open")) hideModal(); });
+  }
+
+  // ---- lightbox (works on whichever list opened it) ----
+  const lb = $("lb"), lbImg = $("lb-img"), lbVid = $("lb-vid"), lbCount = $("lb-count");
+  let activeList = [], cur = 0, timer = null;
 
   function show(i) {
-    cur = (i + flat.length) % flat.length;
-    const it = flat[cur].item;
+    cur = (i + activeList.length) % activeList.length;
+    const it = activeList[cur].item;
     if (it.video) {
-      lbImg.style.display = "none";
-      lbVid.style.display = "";
-      lbVid.src = it.video;
-      lbVid.play().catch(() => {});
+      lbImg.style.display = "none"; lbVid.style.display = "";
+      lbVid.src = it.video; lbVid.play().catch(() => {});
     } else {
       if (lbVid) { lbVid.pause(); lbVid.removeAttribute("src"); lbVid.load(); lbVid.style.display = "none"; }
-      lbImg.style.display = "";
-      lbImg.src = it.full;
+      lbImg.style.display = ""; lbImg.src = it.full;
     }
-    lbCount.textContent = (cur + 1) + " / " + flat.length;
+    lbCount.textContent = (cur + 1) + " / " + activeList.length;
   }
-  function openLB(i) { lb.classList.add("open"); show(i); document.body.style.overflow = "hidden"; }
+  function openLB(list, i) { activeList = list; lb.classList.add("open"); show(i); document.body.style.overflow = "hidden"; }
   function closeLB() {
     lb.classList.remove("open"); stop();
     if (lbVid) { lbVid.pause(); lbVid.removeAttribute("src"); lbVid.load(); }
     document.body.style.overflow = "";
   }
-  function stop() { if (timer) { clearInterval(timer); timer = null; document.getElementById("lb-play").classList.remove("active"); } }
+  function stop() { if (timer) { clearInterval(timer); timer = null; $("lb-play").classList.remove("active"); } }
 
-  document.getElementById("lb-close").onclick = closeLB;
-  document.getElementById("lb-prev").onclick = () => { stop(); show(cur - 1); };
-  document.getElementById("lb-next").onclick = () => { stop(); show(cur + 1); };
-  document.getElementById("lb-play").onclick = function () {
+  $("lb-close").onclick = closeLB;
+  $("lb-prev").onclick = () => { stop(); show(cur - 1); };
+  $("lb-next").onclick = () => { stop(); show(cur + 1); };
+  $("lb-play").onclick = function () {
     if (timer) { stop(); } else { this.classList.add("active"); timer = setInterval(() => show(cur + 1), 2600); }
   };
   lb.addEventListener("click", (e) => { if (e.target === lb) closeLB(); });

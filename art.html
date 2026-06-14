@@ -36,9 +36,46 @@
   <div class="wrap"><div class="filters" id="filters"></div></div>
 </section>
 
-<main class="wrap" id="groups" style="padding-bottom:4rem">
+<main class="wrap" id="groups" style="padding-bottom:1rem">
   <p style="color:var(--ink-faint);font-family:var(--mono)">Loading gallery…</p>
 </main>
+
+<!-- casual / meme collection — isolated, behind a disclaimer -->
+<section class="wrap" style="padding-bottom:2.5rem">
+  <div class="meme-vault">
+    <div class="meme-vault__text">
+      <span class="eyebrow">Aside · not part of the portfolio proper</span>
+      <h2>Casual &amp; Experimental</h2>
+      <p>A lighthearted side-collection kept deliberately separate from the work above — made for fun and as a quick proof of concept.</p>
+    </div>
+    <button class="btn meme-vault__btn" id="meme-open">View the casual collection ↗</button>
+  </div>
+</section>
+
+<!-- revealed only after the disclaimer is acknowledged -->
+<section class="wrap" id="meme-reveal" hidden style="padding-bottom:3rem">
+  <div class="group__head"><h2 style="font-style:italic">The Casual Collection</h2><span class="group__count" id="meme-count"></span><span class="group__line"></span></div>
+  <p class="meme-reveal__note">⚠ Humor-first experiments — intentionally unpolished and not representative of serious creative or professional work.</p>
+  <div class="gallery" id="meme-grid"></div>
+</section>
+
+<!-- disclaimer modal -->
+<div class="modal" id="meme-modal" aria-hidden="true">
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="meme-modal-title">
+    <div class="modal__seal">🎭</div>
+    <span class="eyebrow">A note before you enter</span>
+    <h3 id="meme-modal-title">This is the casual corner.</h3>
+    <p>This section was made with <strong>humor in mind</strong> and exists purely for casual use and as a
+       <strong>proof of concept</strong>. The pieces here are lighthearted experiments in image generation and
+       prompt iteration — intentionally unpolished and <strong>not representative of my serious artistic,
+       creative, or professional work</strong>.</p>
+    <p class="modal__fine">Everything's in good fun. Proceed if you're up for a laugh.</p>
+    <div class="modal__actions">
+      <button class="btn" id="meme-cancel">Maybe later</button>
+      <button class="btn btn--solid" id="meme-enter">View the collection</button>
+    </div>
+  </div>
+</div>
 
 <!-- lightbox -->
 <div class="lb" id="lb" aria-hidden="true">

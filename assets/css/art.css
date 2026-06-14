@@ -81,4 +81,33 @@ body[data-theme="art"] {
   color: #fff; background: rgba(0,0,0,.55); border: 1px solid rgba(255,255,255,.3);
   border-radius: 5px; padding: .14rem .5rem; }
 
-@media (max-width: 640px) { .gallery { columns: 2 150px; } }
+/* ---- casual / meme vault ---- */
+.meme-vault {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+  border: 1px dashed var(--line); border-radius: var(--radius);
+  padding: 1.6rem clamp(1.4rem, 4vw, 2.2rem);
+  background: linear-gradient(180deg, var(--bg-soft), transparent);
+}
+.meme-vault__text .eyebrow { display: block; margin-bottom: .5rem; color: var(--ink-faint); }
+.meme-vault__text h2 { font-style: italic; font-size: 1.6rem; margin-bottom: .3rem; }
+.meme-vault__text p { color: var(--ink-soft); font-size: .92rem; margin: 0; max-width: 56ch; }
+.meme-vault__btn { flex-shrink: 0; }
+.meme-reveal__note { font-family: var(--mono); font-size: .74rem; letter-spacing: .03em;
+  color: var(--ink-faint); margin: 0 0 1.4rem; }
+
+/* ---- modal ---- */
+.modal { position: fixed; inset: 0; z-index: 220; display: none; place-items: center; padding: 1.2rem;
+  background: rgba(6,4,10,.8); backdrop-filter: blur(8px); }
+.modal.open { display: grid; animation: modalin .25s var(--ease); }
+@keyframes modalin { from { opacity: 0; } to { opacity: 1; } }
+.modal__box { width: min(92vw, 520px); background: var(--bg-panel); border: 1px solid var(--line);
+  border-radius: 16px; padding: clamp(1.6rem, 4vw, 2.4rem); text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+.modal__seal { font-size: 2.4rem; margin-bottom: .6rem; }
+.modal__box .eyebrow { display: block; margin-bottom: .6rem; }
+.modal__box h3 { font-family: var(--serif); font-style: italic; font-size: 1.8rem; margin-bottom: .9rem; color: var(--ink); }
+.modal__box p { color: var(--ink-soft); font-size: .95rem; line-height: 1.6; margin: 0 0 .9rem; }
+.modal__box strong { color: var(--ink); }
+.modal__fine { font-size: .85rem !important; color: var(--ink-faint) !important; }
+.modal__actions { display: flex; gap: .7rem; justify-content: center; flex-wrap: wrap; margin-top: 1.4rem; }
+
+@media (max-width: 640px) { .gallery { columns: 2 150px; } .meme-vault { flex-direction: column; align-items: flex-start; } .meme-vault__btn { width: 100%; } }
