@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Canrael Codex — A Quote Generator</title>
+  <meta name="description" content="Whispers from the ruins of Canrael — a grimdark world where the gods have turned their gaze away. Draw a quote from the codex." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Canrael Codex — A Quote Generator" />
+  <meta property="og:description" content="In a world where the gods have turned their gaze away, we are but whispers in the ruins of a forgotten age." />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0908'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%238fb6c9'%3E%E2%9C%B6%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="hero-banner" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="embers" id="embers" aria-hidden="true"></div>
+
+  <main class="codex">
+    <header class="masthead">
+      <div class="sigil-mark" aria-hidden="true">✶</div>
+      <h1 class="title">The Canrael Codex</h1>
+      <p class="subtitle">Whispers from the ruins of a forgotten age</p>
+      <div class="rule" aria-hidden="true"><span>✦</span></div>
+    </header>
+
+    <!-- Region filter -->
+    <nav class="regions" id="regions" aria-label="Filter quotes by region of Canrael"></nav>
+    <p class="region-blurb" id="regionBlurb"></p>
+
+    <!-- The quote card -->
+    <section class="quote-stage" aria-live="polite">
+      <figure class="quote-card" id="quoteCard">
+        <div class="corner tl" aria-hidden="true"></div>
+        <div class="corner tr" aria-hidden="true"></div>
+        <div class="corner bl" aria-hidden="true"></div>
+        <div class="corner br" aria-hidden="true"></div>
+
+        <span class="quote-mark open" aria-hidden="true">“</span>
+        <blockquote class="quote-text" id="quoteText">The codex awaits. Draw, and let a voice from Canrael speak.</blockquote>
+        <span class="quote-mark close" aria-hidden="true">”</span>
+
+        <figcaption class="quote-attr" id="quoteAttr">— The Canrael Codex</figcaption>
+        <div class="quote-region-tag" id="quoteRegionTag"></div>
+      </figure>
+    </section>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn btn-primary" id="drawBtn" type="button">
+        <span class="btn-glyph" aria-hidden="true">✶</span>
+        <span class="btn-label">Draw a Whisper</span>
+      </button>
+      <button class="btn btn-ghost" id="copyBtn" type="button" title="Copy this quote to your clipboard">
+        <span class="btn-glyph" aria-hidden="true">❧</span>
+        <span class="btn-label" id="copyLabel">Inscribe</span>
+        <span class="btn-copy-note" aria-hidden="true">(Copy)</span>
+      </button>
+    </div>
+
+    <p class="hint">Press <kbd>Space</kbd> to draw · <kbd>C</kbd> to inscribe</p>
+
+    <div class="audio-bar" role="group" aria-label="Audio controls">
+      <button id="musicToggle" class="audio-btn" type="button" aria-pressed="false">
+        <span class="audio-glyph" aria-hidden="true">♫</span> Music
+      </button>
+      <button id="sfxToggle" class="audio-btn" type="button" aria-pressed="true">
+        <span class="audio-glyph" aria-hidden="true">♪</span> Sfx
+      </button>
+      <span class="vol-wrap" title="Music volume">
+        <span class="vol-ico" aria-hidden="true">🔈</span>
+        <input id="musicVol" class="vol-slider" type="range" min="0" max="100" value="30" aria-label="Music volume" />
+      </span>
+    </div>
+
+    <footer class="footer">
+      <div class="counter" id="counter"></div>
+      <p class="footer-line">“Kindle a small light in the endless dark. It is not much. It is everything.”</p>
+      <p class="footer-sub">The world of Canrael · a quote bank of <span id="totalCount">0</span> whispers</p>
+    </footer>
+  </main>
+
+  <script src="sfx.js"></script>
+  <script src="music.js"></script>
+  <script src="quotes.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

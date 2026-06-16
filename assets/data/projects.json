@@ -109,6 +109,58 @@
       ]
     },
     {
+      "id": "canrael-codex",
+      "title": "The Canrael Codex",
+      "category": "web",
+      "year": "2026",
+      "featured": true,
+      "award": null,
+      "tagline": "Dark-fantasy quote generator · a creative-support tool",
+      "blurb": "My most ambitious static site — a Canrael quote generator and worldbuilding companion: 281 hand-written quotes across 8 regions, each with its own concept-art backdrop and ambient score.",
+      "summary": "The Canrael Codex is a dark-fantasy quote generator built as a creative-support backbone for my worldbuilding. Draw from 281 hand-written ‘whispers’ — anonymous voices from across the continents — and filter by 8 regions of Canrael, each of which shifts the site's concept-art backdrop and ambient music to match (the Abyss, Frosthold, Ankari, Miran, and more). Aged-parchment and silver-blue Aetherflame styling over original concept art, keyboard shortcuts (Space to draw, C to copy/inscribe), region-themed Web Audio ambience, and an ember particle field — fully static and responsive, with no build step or dependencies.",
+      "stack": [
+        "HTML",
+        "CSS",
+        "Vanilla JS",
+        "Web Audio API",
+        "GitHub Pages"
+      ],
+      "highlights": [
+        "281 hand-written quotes spanning the world's many voices",
+        "8 region filters, each with its own concept-art backdrop + ambient score",
+        "Region-themed Web Audio ambience that shifts with your selection",
+        "Aged-parchment / Aetherflame art direction over original concept art",
+        "Keyboard shortcuts, fully responsive, zero dependencies"
+      ],
+      "metrics": [
+        {
+          "label": "Quotes",
+          "value": "281"
+        },
+        {
+          "label": "Regions",
+          "value": "8"
+        },
+        {
+          "label": "Build",
+          "value": "None"
+        }
+      ],
+      "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/canrael-codex.webp",
+      "demo": "https://kurtlylepaulino.github.io/FullPortfolio/projects/canrael-codex/index.html",
+      "links": [
+        {
+          "label": "Live demo",
+          "href": "https://kurtlylepaulino.github.io/FullPortfolio/projects/canrael-codex/index.html",
+          "kind": "primary"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/KurtLylePaulino"
+        }
+      ]
+    },
+    {
       "id": "haiku-daily",
       "title": "Haiku Daily",
       "category": "web",

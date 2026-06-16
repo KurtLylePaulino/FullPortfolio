@@ -1,0 +1,9 @@
+# Author's private source documents — not part of the published site
+LORE DUMP/
+
+# Local preview helper
+.claude/
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store

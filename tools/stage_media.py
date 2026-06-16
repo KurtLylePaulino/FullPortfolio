@@ -13,6 +13,7 @@ PROJECT_IMAGES = [
     ("PROJECTS/CIRCUIT BREAKERS/GameScreenshot.png", "circuit-breakers"),
     ("PROJECTS/WEBDEV/HAIKU DAILY/Screenshot 2026-06-11 112843.png", "haiku-daily"),
     ("PROJECTS/WEBDEV/Jianghu Proverbs/Screenshot 2026-06-11 173524.png", "jianghu-proverbs"),
+    ("PROJECTS/Canrael Codex/Screenshot 2026-06-16 162758.png", "canrael-codex"),
 ]
 
 def main():
