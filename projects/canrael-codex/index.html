@@ -64,6 +64,16 @@
         <span class="btn-label" id="copyLabel">Inscribe</span>
         <span class="btn-copy-note" aria-hidden="true">(Copy)</span>
       </button>
+      <button class="btn btn-ghost btn-realm" id="gazeBtn" type="button" title="View scenery from the selected region">
+        <span class="btn-glyph" aria-hidden="true">❖</span>
+        <span class="btn-label">Gaze Upon the Realm</span>
+        <span class="btn-copy-note" aria-hidden="true">(View scenes)</span>
+      </button>
+      <button class="btn btn-ghost" id="seekBtn" type="button" title="Search the codex directly">
+        <span class="btn-glyph" aria-hidden="true">⌕</span>
+        <span class="btn-label">Seek a Whisper</span>
+        <span class="btn-copy-note" aria-hidden="true">(Search)</span>
+      </button>
     </div>
 
     <p class="hint">Press <kbd>Space</kbd> to draw · <kbd>C</kbd> to inscribe</p>
@@ -87,6 +97,52 @@
       <p class="footer-sub">The world of Canrael · a quote bank of <span id="totalCount">0</span> whispers</p>
     </footer>
   </main>
+
+  <!-- Realm scene viewer -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Realm scenes">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Close scenes">✕</button>
+    <button class="lb-nav lb-prev" id="lbPrev" type="button" aria-label="Previous scene">‹</button>
+    <figure class="lb-stage">
+      <img class="lb-img" id="lbImg" alt="A scene from the realm" />
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" type="button" aria-label="Next scene">›</button>
+    <div class="lb-bar">
+      <span class="lb-title" id="lbTitle"></span>
+      <span class="lb-count" id="lbCount"></span>
+    </div>
+  </div>
+
+  <!-- Seek: direct search through the codex -->
+  <div class="seek" id="seek" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Seek a whisper">
+    <button class="seek-close" id="seekClose" type="button" aria-label="Close seek">✕</button>
+
+    <!-- Warning gate -->
+    <div class="seek-panel seek-warn" id="seekWarn">
+      <div class="seek-warn-sigil" aria-hidden="true">⌕</div>
+      <h2 class="seek-warn-title">A word before you Seek</h2>
+      <p class="seek-warn-text">This will defeat the point of a randomized quote bank — however, it will grant you access to directly searching through the quotes.</p>
+      <div class="seek-warn-actions">
+        <button class="btn btn-primary" id="seekProceed" type="button">
+          <span class="btn-glyph" aria-hidden="true">⌕</span>
+          <span class="btn-label">Seek anyway</span>
+        </button>
+        <button class="btn btn-ghost" id="seekCancel" type="button">
+          <span class="btn-glyph" aria-hidden="true">✶</span>
+          <span class="btn-label">Let fate decide</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search interface -->
+    <div class="seek-panel seek-search" id="seekSearch" hidden>
+      <div class="seek-bar">
+        <span class="seek-ico" aria-hidden="true">⌕</span>
+        <input id="seekInput" class="seek-input" type="text" placeholder="Search by word, theme, or voice…" autocomplete="off" spellcheck="false" aria-label="Search the codex" />
+      </div>
+      <div class="seek-meta" id="seekMeta"></div>
+      <div class="seek-results" id="seekResults" role="listbox" aria-label="Search results"></div>
+    </div>
+  </div>
 
   <script src="sfx.js"></script>
   <script src="music.js"></script>

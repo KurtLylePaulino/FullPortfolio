@@ -115,9 +115,9 @@
       "year": "2026",
       "featured": true,
       "award": null,
-      "tagline": "Dark-fantasy quote generator · a creative-support tool",
-      "blurb": "My most ambitious static site — a Canrael quote generator and worldbuilding companion: 281 hand-written quotes across 8 regions, each with its own concept-art backdrop and ambient score.",
-      "summary": "The Canrael Codex is a dark-fantasy quote generator built as a creative-support backbone for my worldbuilding. Draw from 281 hand-written ‘whispers’ — anonymous voices from across the continents — and filter by 8 regions of Canrael, each of which shifts the site's concept-art backdrop and ambient music to match (the Abyss, Frosthold, Ankari, Miran, and more). Aged-parchment and silver-blue Aetherflame styling over original concept art, keyboard shortcuts (Space to draw, C to copy/inscribe), region-themed Web Audio ambience, and an ember particle field — fully static and responsive, with no build step or dependencies.",
+      "tagline": "Dark-fantasy quote generator + realm scene viewer · creative-support tool",
+      "blurb": "My most ambitious static site — a Canrael quote generator and worldbuilding companion: 525 hand-written quotes across 8 regions, each with its own ambient score and a concept-art scene gallery.",
+      "summary": "The Canrael Codex is a dark-fantasy quote generator and worldbuilding companion built as a creative-support backbone. Draw from 525 hand-written ‘whispers’ — anonymous voices from across the continents — and filter by 8 regions of Canrael, each of which shifts the site's ambient music to match. A realm scene viewer opens a keyboard-navigable lightbox of original concept art — roughly nine scenes per realm, 81 in all (the Abyss, Frosthold, Ankari, Miran, and more). Aged-parchment and silver-blue Aetherflame styling, an ember particle field, region-themed Web Audio ambience and synth SFX, and keyboard shortcuts (Space to draw, C to inscribe) — fully static and responsive, with no build step or dependencies.",
       "stack": [
         "HTML",
         "CSS",
@@ -126,24 +126,24 @@
         "GitHub Pages"
       ],
       "highlights": [
-        "281 hand-written quotes spanning the world's many voices",
-        "8 region filters, each with its own concept-art backdrop + ambient score",
-        "Region-themed Web Audio ambience that shifts with your selection",
-        "Aged-parchment / Aetherflame art direction over original concept art",
-        "Keyboard shortcuts, fully responsive, zero dependencies"
+        "525 hand-written quotes spanning the world's many voices",
+        "Realm scene viewer — a keyboard-navigable gallery of 81 concept-art scenes (≈9 per region)",
+        "8 region filters, each with its own ambient score that shifts on selection",
+        "Region-themed Web Audio ambience + synth SFX, with an ember particle field",
+        "Aged-parchment / Aetherflame art direction; fully responsive, zero dependencies"
       ],
       "metrics": [
         {
           "label": "Quotes",
-          "value": "281"
+          "value": "525"
+        },
+        {
+          "label": "Scenes",
+          "value": "81"
         },
         {
           "label": "Regions",
           "value": "8"
-        },
-        {
-          "label": "Build",
-          "value": "None"
         }
       ],
       "media": "https://kurtlylepaulino.github.io/FullPortfolio/assets/img/projects/canrael-codex.webp",
