@@ -12,7 +12,7 @@
   --line:      #2a2e3d;
   --ink:       #e7e6e2;
   --ink-soft:  #b4b6c2;
-  --ink-faint: #767a8a;
+  --ink-faint: #868a99;
 
   /* default accent (Aetherflame silver-blue — the hub) */
   --accent:      #7fd6d0;
@@ -27,6 +27,7 @@
   --maxw: 1180px;
   --radius: 14px;
   --ease: cubic-bezier(.22,.61,.36,1);
+  --ease-out-expo: cubic-bezier(.16,1,.3,1);
 }
 
 * { box-sizing: border-box; }
@@ -47,8 +48,18 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
 
-h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.08; margin: 0; }
+/* subtle film grain for material depth (sits above bg, below content interaction) */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+@media (prefers-reduced-motion: reduce) { body::before { display: none; } }
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.08; margin: 0; text-wrap: balance; }
+.lede, p { text-wrap: pretty; }
 h1 { font-size: clamp(2.6rem, 7vw, 5.4rem); letter-spacing: -.01em; }
 h2 { font-size: clamp(1.9rem, 4vw, 3rem); }
 h3 { font-size: 1.35rem; }
@@ -78,11 +89,12 @@ h3 { font-size: 1.35rem; }
   color: var(--ink-soft); padding: .4rem 0; position: relative; transition: color .25s;
 }
 .nav__links a::after {
-  content: ""; position: absolute; left: 0; bottom: -2px; height: 1px; width: 0;
-  background: var(--accent); transition: width .3s var(--ease);
+  content: ""; position: absolute; left: 0; bottom: -2px; height: 1px; width: 100%;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform .35s var(--ease-out-expo);
 }
 .nav__links a:hover { color: var(--ink); }
-.nav__links a:hover::after { width: 100%; }
+.nav__links a:hover::after { transform: scaleX(1); }
 .nav__links a.cta {
   border: 1px solid var(--line); border-radius: 999px; padding: .45rem 1rem;
   color: var(--ink);
@@ -102,9 +114,11 @@ h3 { font-size: 1.35rem; }
 .btn--solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn--solid:hover { filter: brightness(1.08); }
 
-/* ---------- reveal-on-scroll ---------- */
-.reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
+/* ---------- reveal-on-scroll (visible by default; only hidden once JS+motion take over) ---------- */
+.reveal { opacity: 1; }
+html.js .reveal { opacity: 0; transform: translateY(24px);
+  transition: opacity .7s var(--ease-out-expo), transform .7s var(--ease-out-expo); will-change: opacity, transform; }
+html.js .reveal.in { opacity: 1; transform: none; }
 
 /* ---------- footer ---------- */
 .foot {

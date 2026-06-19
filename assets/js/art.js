@@ -8,6 +8,21 @@
   let flat = [];        // serious work (lightbox list A)
   let memesFlat = [];   // casual collection (lightbox list B)
   const order = ["motion", "artwork", "vivi", "yuria", "maps"];   // memes intentionally excluded here
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // focus helpers for the overlays (lightbox + disclaimer modal)
+  function focusables(el) {
+    return Array.prototype.slice
+      .call(el.querySelectorAll('button, [href], input, video[controls], [tabindex]:not([tabindex="-1"])'))
+      .filter((n) => !n.disabled && n.offsetParent !== null);
+  }
+  function trapTab(el, e) {
+    if (e.key !== "Tab") return;
+    const f = focusables(el); if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 
   fetch("assets/data/art.json")
     .then((r) => r.json())
@@ -89,6 +104,11 @@
   function wireVideoTiles() {
     const vids = groupsEl.querySelectorAll(".cell--video video");
     if (!vids.length) return;
+    if (reduceMotion) {
+      // honor the OS setting: load a still first frame, never autoplay (play on click in the lightbox)
+      vids.forEach((v) => { v.preload = "metadata"; v.src = v.dataset.src; });
+      return;
+    }
     if (!("IntersectionObserver" in window)) {
       vids.forEach((v) => { v.src = v.dataset.src; v.play().catch(() => {}); });
       return;
@@ -107,9 +127,17 @@
   function wireMemeVault() {
     const openBtn = $("meme-open"), modal = $("meme-modal"), reveal = $("meme-reveal");
     if (!openBtn || !modal || !reveal) return;
-    let entered = false;
-    const showModal = () => { modal.classList.add("open"); document.body.style.overflow = "hidden"; };
-    const hideModal = () => { modal.classList.remove("open"); document.body.style.overflow = ""; };
+    let entered = false, modalReturn = null;
+    const showModal = () => {
+      modalReturn = document.activeElement;
+      modal.classList.add("open"); modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden"; $("meme-enter").focus();
+    };
+    const hideModal = () => {
+      modal.classList.remove("open"); modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      if (modalReturn && modalReturn.focus) modalReturn.focus(); modalReturn = null;
+    };
     openBtn.addEventListener("click", () => {
       if (entered) { reveal.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
       showModal();
@@ -121,7 +149,11 @@
     });
     $("meme-cancel").addEventListener("click", hideModal);
     modal.addEventListener("click", (e) => { if (e.target === modal) hideModal(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("open")) hideModal(); });
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("open")) return;
+      if (e.key === "Escape") hideModal();
+      else trapTab(modal, e);
+    });
   }
 
   // ---- lightbox (works on whichever list opened it) ----
@@ -133,18 +165,24 @@
     const it = activeList[cur].item;
     if (it.video) {
       lbImg.style.display = "none"; lbVid.style.display = "";
-      lbVid.src = it.video; lbVid.play().catch(() => {});
+      lbVid.src = it.video; if (!reduceMotion) lbVid.play().catch(() => {});
     } else {
       if (lbVid) { lbVid.pause(); lbVid.removeAttribute("src"); lbVid.load(); lbVid.style.display = "none"; }
       lbImg.style.display = ""; lbImg.src = it.full;
     }
     lbCount.textContent = (cur + 1) + " / " + activeList.length;
   }
-  function openLB(list, i) { activeList = list; lb.classList.add("open"); show(i); document.body.style.overflow = "hidden"; }
+  let lbReturn = null;
+  function openLB(list, i) {
+    lbReturn = document.activeElement;
+    activeList = list; lb.classList.add("open"); lb.setAttribute("aria-hidden", "false");
+    show(i); document.body.style.overflow = "hidden"; $("lb-close").focus();
+  }
   function closeLB() {
-    lb.classList.remove("open"); stop();
+    lb.classList.remove("open"); lb.setAttribute("aria-hidden", "true"); stop();
     if (lbVid) { lbVid.pause(); lbVid.removeAttribute("src"); lbVid.load(); }
     document.body.style.overflow = "";
+    if (lbReturn && lbReturn.focus) lbReturn.focus(); lbReturn = null;
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; $("lb-play").classList.remove("active"); } }
 
@@ -160,5 +198,6 @@
     if (e.key === "Escape") closeLB();
     else if (e.key === "ArrowLeft") { stop(); show(cur - 1); }
     else if (e.key === "ArrowRight") { stop(); show(cur + 1); }
+    else trapTab(lb, e);
   });
 })();

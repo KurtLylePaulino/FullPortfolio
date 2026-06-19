@@ -23,6 +23,10 @@ body[data-theme="writing"] {
 }
 
 .hero { position: relative; min-height: 92svh; display: flex; flex-direction: column; justify-content: center; padding-top: 6rem; overflow: hidden; text-align: center; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: url("../img/backplates/writing.webp") center/cover no-repeat; opacity: .4;
+  -webkit-mask-image: linear-gradient(to bottom, #000 26%, transparent 90%);
+          mask-image: linear-gradient(to bottom, #000 26%, transparent 90%); }
 #hero-canvas { position: absolute; inset: 0; z-index: 0; }
 .hero::after { content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
   background: linear-gradient(to bottom, transparent 60%, var(--bg)); }

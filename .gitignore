@@ -10,6 +10,9 @@ desktop.ini
 __pycache__/
 *.pyc
 
+# scratch: Z-Image contact sheets + raw image picks (kept local, never shipped)
+tools/_zpick/
+
 # never commit the heavy originals (they live in sibling folders, not here)
 *.zip
 *.exe

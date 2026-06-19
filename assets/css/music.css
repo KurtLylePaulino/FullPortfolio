@@ -46,6 +46,11 @@ body[data-theme="music"] {
 body[data-theme="music"] h1, body[data-theme="music"] .world__title { font-family: var(--mono); font-weight: 700; }
 
 .page-hero { position: relative; padding: 9rem 0 2rem; overflow: hidden; }
+.page-hero::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: url("../img/backplates/music.webp") center/cover no-repeat; opacity: .26;
+  -webkit-mask-image: linear-gradient(to bottom, #000 20%, transparent 88%);
+          mask-image: linear-gradient(to bottom, #000 20%, transparent 88%); }
+.page-hero > .wrap { position: relative; z-index: 1; }
 .page-hero h1 { font-size: clamp(2.8rem, 9vw, 6rem); letter-spacing: -.02em; line-height: .95; }
 .page-hero h1 .glitch { position: relative; color: var(--ink); }
 .page-hero h1 .glitch::before, .page-hero h1 .glitch::after {
@@ -79,9 +84,9 @@ body[data-theme="music"] h1, body[data-theme="music"] .world__title { font-famil
 .track {
   display: grid; grid-template-columns: 3rem 1fr auto; align-items: center; gap: 1rem;
   padding: 1.05rem .6rem; border-bottom: 1px solid var(--line); cursor: pointer;
-  transition: background .25s, padding .25s var(--ease); position: relative;
+  transition: background .25s, transform .25s var(--ease); position: relative;
 }
-.track:hover { background: rgba(255,45,126,.05); padding-left: 1.1rem; }
+.track:hover { background: rgba(255,45,126,.05); transform: translateX(5px); }
 .track__no { font-family: var(--mono); font-size: .9rem; color: var(--ink-faint); }
 .track.playing .track__no { color: var(--accent); }
 .track__title { font-family: var(--mono); font-weight: 700; font-size: 1.02rem; letter-spacing: .01em; }
