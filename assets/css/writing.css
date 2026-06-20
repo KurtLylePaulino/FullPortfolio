@@ -67,9 +67,10 @@ body[data-theme="writing"] {
 
 /* codex / library */
 .library { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; }
-.book { display: flex; gap: 1rem; align-items: flex-start; border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.2rem; background: var(--bg-soft); transition: all .25s var(--ease); }
+.book { display: flex; gap: 1rem; align-items: flex-start; border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.2rem; background: var(--bg-soft); transition: transform .25s var(--ease-out-expo), border-color .25s var(--ease), box-shadow .25s var(--ease); }
 .book:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: var(--glow); }
-.book__icon { font-size: 1.4rem; color: var(--accent); line-height: 1; margin-top: .1rem; }
+.book__icon { color: var(--accent); margin-top: .15rem; flex-shrink: 0; }
+.book__icon svg { width: 22px; height: 22px; display: block; }
 .book h4 { font-family: var(--serif); font-size: 1.2rem; margin: 0 0 .2rem; color: var(--ink); }
 .book p { font-size: .84rem; color: var(--ink-soft); margin: 0 0 .5rem; }
 .book a { font-family: var(--mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }

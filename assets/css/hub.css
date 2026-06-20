@@ -29,13 +29,6 @@
 .hero h1 .accent { color: var(--accent); }
 .hero__sub { max-width: 54ch; margin-bottom: 2.4rem; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: .9rem; }
-.hero__scroll {
-  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2;
-  font-family: var(--mono); font-size: .66rem; letter-spacing: .3em; text-transform: uppercase;
-  color: var(--ink-faint); display: flex; flex-direction: column; align-items: center; gap: .6rem;
-}
-.hero__scroll span { width: 1px; height: 38px; background: linear-gradient(var(--accent), transparent); animation: drop 2.2s var(--ease) infinite; }
-@keyframes drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
 /* ---------- worlds: asymmetric bento ---------- */
 .worlds {
@@ -70,6 +63,12 @@
 .world__go { margin-top: 1rem; font-family: var(--mono); font-size: .72rem; letter-spacing: .15em; text-transform: uppercase; color: var(--w-accent, var(--accent)); display: inline-flex; gap: .5rem; align-items: center; }
 .world__go i { transition: transform .3s var(--ease); font-style: normal; }
 .world:hover .world__go i { transform: translateX(5px); }
+
+/* staggered entrance for the bento (cards enter together, so cascade them) */
+html.js .worlds .world:nth-child(2) { animation-delay: .07s; }
+html.js .worlds .world:nth-child(3) { animation-delay: .14s; }
+html.js .worlds .world:nth-child(4) { animation-delay: .21s; }
+.world:active { transform: scale(.99); transition-duration: .12s; }
 
 /* ---------- about strip ---------- */
 .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
