@@ -108,9 +108,11 @@ h3 { font-size: 1.35rem; }
   font-family: var(--mono); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase;
   padding: .8rem 1.5rem; border-radius: 999px; cursor: pointer;
   border: 1px solid var(--line); background: transparent; color: var(--ink);
-  transition: all .28s var(--ease);
+  transition: transform .2s var(--ease-out-expo), border-color .28s var(--ease),
+    box-shadow .28s var(--ease), filter .2s var(--ease);
 }
 .btn:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: var(--glow); }
+.btn:active { transform: scale(.97); }
 .btn--solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn--solid:hover { filter: brightness(1.08); }
 
@@ -129,6 +131,9 @@ html.js .reveal.in { opacity: 1; transform: none; }
 .foot a { color: var(--ink-soft); font-family: var(--mono); font-size: .76rem; letter-spacing: .08em; }
 .foot a:hover { color: var(--accent); }
 .foot small { font-family: var(--mono); font-size: .7rem; letter-spacing: .08em; }
+.foot__legal { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); text-align: center; }
+.foot__legal p { max-width: 68ch; margin: 0 auto; font-size: .72rem; line-height: 1.75; color: var(--ink-faint); text-wrap: balance; }
+.foot__legal a { font-family: inherit; font-size: inherit; letter-spacing: 0; text-decoration: underline; text-underline-offset: 2px; }
 
 /* ---------- section scaffolding ---------- */
 .section { padding: clamp(3.5rem, 9vw, 7rem) 0; }
