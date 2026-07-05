@@ -70,7 +70,19 @@
     }
     function start() { size(); make(); cancelAnimationFrame(raf); frame(); }
     start();
-    let t;
-    window.addEventListener("resize", () => { clearTimeout(t); t = setTimeout(start, 200); });
+    // Re-size and re-seed whenever the canvas's actual rendered size changes.
+    // This self-heals late layout / stylesheet / font timing (otherwise the field
+    // can stay stuck at the canvas default 300x150 and cluster in the corner).
+    let t, lastW = canvas.offsetWidth, lastH = canvas.offsetHeight;
+    const resize = () => { clearTimeout(t); t = setTimeout(start, 120); };
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(() => {
+        if (canvas.offsetWidth === lastW && canvas.offsetHeight === lastH) return;
+        lastW = canvas.offsetWidth; lastH = canvas.offsetHeight;
+        resize();
+      }).observe(canvas);
+    } else {
+      window.addEventListener("resize", resize);
+    }
   }
 })();
