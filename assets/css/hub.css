@@ -15,7 +15,7 @@
   -webkit-mask-image: linear-gradient(to bottom, #000 28%, transparent 90%);
           mask-image: linear-gradient(to bottom, #000 28%, transparent 90%);
 }
-#hero-canvas { position: absolute; inset: 0; z-index: 0; }
+#hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
 .hero::after { /* vignette + abyssal glow */
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
